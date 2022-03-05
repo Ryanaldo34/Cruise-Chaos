@@ -1,0 +1,47 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Cruise Map",
+		"description": "testing for cruise map",
+		"min_engine_version": [
+			1,
+			17,
+			0
+		],
+		"uuid": "f4c026df-a8c6-4f90-99b7-113734639996",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"description": "testing for cruise map",
+			"type": "data",
+			"uuid": "0b34489d-fa1e-4063-b827-d8d3440854e6",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"uuid": "14a290e9-192d-4377-aedc-e23875ed5284",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"metadata": {
+		"generated_with": {
+			"bridge": [
+				"2.2.2"
+			]
+		}
+	}
+}

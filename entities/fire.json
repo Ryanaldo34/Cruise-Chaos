@@ -1,0 +1,107 @@
+{
+	"format_version": "1.16.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "gus:fire",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"animations": {
+				"fire": "animation.fire",
+				"fire2": "animation.fire2",
+				"manager": "controller.animation.fire.manager"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"fire": "!q.variant"
+					},
+					{
+						"fire2": "!q.variant"
+					},
+					"manager"
+				]
+			}
+		},
+		"component_groups": {
+			"gus:doused": {
+				"minecraft:variant": {
+					"value": 1
+				},
+				"minecraft:type_family": {
+					"family": [
+						"fire",
+						"doused"
+					]
+				}
+			},
+			"gus:undoused": {
+				"minecraft:variant": {
+					"value": 0
+				},
+				"minecraft:type_family": {
+					"family": [
+						"fire",
+						"undoused"
+					]
+				}
+			}
+		},
+		"components": {
+			"minecraft:navigation.generic": {},
+			"minecraft:movement.generic": {},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 0,
+				"probability": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.1,
+				"height": 0.1
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": true
+			}
+		},
+		"events": {
+			"gus:douse": {
+				"add": {
+					"component_groups": [
+						"gus:doused"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"gus:undoused"
+					]
+				}
+			},
+			"gus:undouse": {
+				"add": {
+					"component_groups": [
+						"gus:undoused"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"gus:doused"
+					]
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{
+  "format_version": "1.17.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "cc:beach_ball",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true
+    }
+  }
+}

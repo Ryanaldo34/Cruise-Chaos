@@ -1,0 +1,19 @@
+{
+  "format_version": "1.17.0",
+  "animation_controllers": {
+    "controller.animation.fly": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [ { "fly": "query.has_rider" } ]
+        },
+        "fly": {
+          "on_entry": [ "@s cc:is_flying" ],
+          "on_exit": [ "@s cc:on_ground" ],
+          "animations": [ "animation.fly" ],
+          "transitions": [ { "default": "!query.has_rider" } ]
+        }
+      }
+    }
+  }
+}
