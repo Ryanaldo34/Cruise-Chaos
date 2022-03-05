@@ -1,0 +1,1 @@
+function quests/manager

@@ -1,0 +1,44 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "gus:npc_2",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {},
+		"components": {
+			"minecraft:npc": {},
+			"minecraft:navigation.generic": {},
+			"minecraft:movement.generic": {},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 0,
+				"probability": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 1.85
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": true
+			}
+		},
+		"events": {}
+	}
+}

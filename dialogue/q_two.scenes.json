@@ -1,0 +1,166 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:npc_dialogue": {
+		"scenes": [
+			{
+				"scene_tag": "qtwo_return",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Ah! you're back so soon! I take it you didn't run into any trouble? "
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_lifeboat"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qtwo_lifeboat",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Whilst I am establishing a connection with the cruise ship, you should go and see whether you can get the lifeboat fixed up."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_fix"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qtwo_fix",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Unfortunately, our new one is being borrowed by a neighboring coast guard, so the old one will need to be fixed instead."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_parts"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qtwo_parts",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "We only need three more parts for it: a drift anchor, a floodlight, and a new motor."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_locations"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qtwo_locations",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "You should be able to find them at the Lighthouse, the Shipyard, and Charlie's Garage. Just speak to me again if you need reminding of where you can find these parts."
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q2/seq_end"
+				]
+			}
+		]
+	}
+}

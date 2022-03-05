@@ -1,0 +1,98 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "gus:npc_3",
+			"is_summonable": true,
+			"is_spawnable": true
+		},
+		"component_groups": {
+			"gus:show_hint": {
+				"minecraft:npc": {}
+			}
+		},
+		"components": {
+			"minecraft:navigation.generic": {},
+			"minecraft:movement.generic": {},
+			"minecraft:movement": {
+				"value": 0
+			},
+			"minecraft:behavior.look_at_player": {
+				"priority": 0,
+				"probability": 1
+			},
+			"minecraft:collision_box": {
+				"width": 0.8,
+				"height": 1.85
+			},
+			"minecraft:physics": {},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": true
+			},
+			"minecraft:environment_sensor": {
+				"triggers": [
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"value": "minecraft:npc",
+									"operator": "!="
+								},
+								{
+									"test": "has_tag",
+									"value": "give_hint"
+								}
+							]
+						},
+						"event": "gus:show_hint"
+					},
+					{
+						"filters": {
+							"all_of": [
+								{
+									"test": "has_component",
+									"value": "minecraft:npc"
+								},
+								{
+									"test": "has_tag",
+									"value": "give_hint",
+									"operator": "!="
+								}
+							]
+						},
+						"event": "gus:hide_hint"
+					}
+				]
+			}
+		},
+		"events": {
+			"gus:show_hint": {
+				"add": {
+					"component_groups": [
+						"gus:show_hint"
+					]
+				}
+			},
+			"gus:hide_hint": {
+				"remove": {
+					"component_groups": [
+						"gus:show_hint"
+					]
+				}
+			}
+		}
+	}
+}

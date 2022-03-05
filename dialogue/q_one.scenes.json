@@ -1,0 +1,223 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:npc_dialogue": {
+		"scenes": [
+			{
+				"scene_tag": "intro",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Hey you!"
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_question"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qone_question",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "You're the one that the commander sent for to help with our cruise ship situation, right?"
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"text": "Yes!"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_make_way"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qone_make_way",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Perfect! You should make your way to them at the MNLI Headquarters so that they can brief you on everything."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_headquarters"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qone_headquarters",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "He usually stays in the upstairs area of the Headquarters..."
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q1/seq_start"
+				]
+			},
+			{
+				"scene_tag": "qone_commander_intro",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Finally! I am so glad to see you have finally arrived, just in time too! I hope that the journey wasn't too troubling for you!"
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qone_situation"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qone_situation",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Now, we have a bit of a situation with a cruise ship anchored a few leagues from here. We received an SOS signal from them however we haven't been able to get in contact since."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qone_satelite"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qone_satelite",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "I believe we should be able to reach them if we realign one of the satellite dishes on the factory to the east of here, you wouldn't mind going over and doing that for me, please?"
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q1/seq_end"
+				]
+			}
+		]
+	}
+}

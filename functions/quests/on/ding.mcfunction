@@ -1,0 +1,1 @@
+playsound random.orb @a

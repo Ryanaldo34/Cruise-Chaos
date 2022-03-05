@@ -1,0 +1,1 @@
+dialogue open @e[type=gus:npc_2,c=1] @a[x=890,y=68,z=606,r=12] qthree_return
