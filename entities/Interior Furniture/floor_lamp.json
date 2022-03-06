@@ -1,0 +1,156 @@
+{
+  "format_version": "1.17.40",
+  "minecraft:entity": {
+    "description": {
+      "identifier": "cc:floor_lamp",
+      "is_experimental": false,
+      "is_spawnable": true,
+      "is_summonable": true,
+      "animations": {
+        "remove": "controller.animation.removal",
+        "placement": "animation.placement"
+      },
+      "scripts": {
+        "animate": [
+          "remove",
+          "placement"
+        ]
+      }
+    },
+    "component_groups": {
+      "being_removed": {
+        "minecraft:variant": {
+          "value": 0
+        }
+      },
+      "purple": {
+        "minecraft:mark_variant": {
+          "value": 0
+        }
+      },
+      "teal": {
+        "minecraft:mark_variant": {
+          "value": 1
+        }
+      }
+    },
+    "components": {
+      "minecraft:type_family":{
+        "family": [
+          "furniture"
+        ]
+      },
+      "minecraft:physics": {},
+      "minecraft:collision_box": {
+        "height": 1,
+        "width": 1
+      },
+      "minecraft:interact": {
+        "interactions": [
+          {
+            "swing": true,
+            "add_items": {
+              "table": "loot_tables/book.json"
+
+            },
+            "use_item": false,
+            "interact_text": "action.interact.remove_furniture",
+            "on_interact": {
+              "filters": {
+                "all_of": [
+                  {
+                    "test": "has_equipment",
+                    "subject": "other",
+                    "domain": "hand",
+                    "operator": "equals",
+                    "value": "stick"
+                  }
+                ]
+              },
+              "event": "cc:remove_furniture",
+              "target": "self"
+            }
+          },
+          {
+            "swing": true,
+            "use_item": false,
+            "interact_text": "action.interact.paint",
+            "on_interact": {
+              "filters": {
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "domain": "hand",
+                  "operator": "equals",
+                  "value": "flint"
+              },
+              "event": "cc:paint_furniture",
+              "target": "self"
+            }
+          }
+        ]
+      },
+      "minecraft:pushable": {
+        "is_pushable": false,
+        "is_pushable_by_piston": true
+      },
+      "minecraft:is_stackable": {},
+      "minecraft:push_through": {
+        "value": 1
+      }
+    },
+    "events": {
+      "minecraft:entity_spawned": {
+        "add": {
+          "component_groups": [
+            "purple"
+          ]
+        }
+      },
+      "cc:remove_funiture": {
+        "add": {
+          "component_groups": [
+            "being_removed"
+          ]
+        }
+      },
+      "cc:paint_furniture": {
+        "sequence": [
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "not",
+              "value": 0
+            },
+            "remove": {
+              "component_groups": [
+                "teal"
+              ]
+            },
+            "add": {
+              "component_groups": [
+                "purple"
+              ]
+            }
+          },
+          {
+            "filters": {
+              "test": "is_mark_variant",
+              "operator": "not",
+              "value": 1
+            },
+            "remove": {
+              "component_groups": [
+                "purple"
+              ]
+            },
+            "add":{
+              "component_groups": [
+                "teal"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

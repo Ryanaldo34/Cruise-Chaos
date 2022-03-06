@@ -10,7 +10,8 @@
 				"animate": [ "fly" ]
 			},
 			"animations": {
-				"fly":"controller.animation.fly"
+				"fly":"controller.animation.fly",
+				"flying": "animation.fly"
 			}
 		},
 		"component_groups": {

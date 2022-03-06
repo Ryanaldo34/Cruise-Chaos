@@ -42,12 +42,12 @@
         ]
       },
       "minecraft:movement": {
-        "value": 1,
-        "max": 1
+        "value": 0.8,
+        "max": 0.8
       },
       "minecraft:navigation.generic": {},
       "minecraft:movement.basic": {
-        "max_turn": 30
+        "max_turn": 45
       },
       "minecraft:rideable": {
         "controlling_seat": 1,

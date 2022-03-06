@@ -2,7 +2,7 @@
   "format_version": "1.17.40",
   "minecraft:entity": {
     "description": {
-      "identifier": "cc:modern_table",
+      "identifier": "cc:coastguard_desk",
       "is_experimental": false,
       "is_spawnable": true,
       "is_summonable": true,
@@ -40,7 +40,7 @@
           {
             "swing": true,
             "add_items": {
-              "table": "loot_tables/modern_table.json"
+              "table": "loot_tables/coastguard_desk.json"
 
             },
             "use_item": false,

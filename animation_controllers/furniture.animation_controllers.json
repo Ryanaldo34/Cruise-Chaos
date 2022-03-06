@@ -1,0 +1,20 @@
+{
+  "format_version": "1.17.40",
+  "animation_controllers": {
+    "controller.animation.removal": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "transitions": [
+            {
+              "default": "query.variant == 0"
+            }
+          ]
+        },
+        "removing": {
+          "on_entry": [ "/function entity/remove" ]
+        }
+      }
+    }
+  }
+}
