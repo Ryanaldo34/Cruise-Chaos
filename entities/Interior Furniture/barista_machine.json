@@ -19,9 +19,9 @@
     },
     "component_groups": {
       "being_removed": {
-        "minecraft:variant": {
-          "value": 0
-        }
+          "minecraft:variant": {
+            "value": 1
+          }
       }
     },
     "components": {
@@ -47,15 +47,11 @@
             "interact_text": "action.interact.remove_furniture",
             "on_interact": {
               "filters": {
-                "all_of": [
-                  {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "operator": "equals",
-                    "value": "stick"
-                  }
-                ]
+                  "test": "has_equipment",
+                  "subject": "other",
+                  "domain": "hand",
+                  "operator": "equals",
+                  "value": "stick"
               },
               "event": "cc:remove_furniture",
               "target": "self"
@@ -73,7 +69,7 @@
       }
     },
     "events": {
-      "cc:remove_funiture": {
+      "cc:remove_furniture": {
         "add": {
           "component_groups": [
             "being_removed"

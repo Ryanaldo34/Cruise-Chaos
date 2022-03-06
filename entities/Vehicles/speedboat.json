@@ -21,7 +21,8 @@
 				"can_sink": false
 			},
 			"minecraft:rideable": {
-				"seat_count": 1,
+				"seat_count": 4,
+				"controlling_seat": 1,
 				"family_types": [
 					"player"
 				],
@@ -67,12 +68,12 @@
 				"max": 10
 			},
 			"minecraft:movement": {
-				"value": 0
+				"value": 0.1
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:collision_box": {
-				"width": 1,
-				"height": 1
+				"width": 2,
+				"height": 1.5
 			},
 			"minecraft:physics": {}
 		}

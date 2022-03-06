@@ -20,7 +20,7 @@
     "component_groups": {
       "being_removed": {
         "minecraft:variant": {
-          "value": 0
+          "value": 1
         }
       }
     },
@@ -73,7 +73,7 @@
       }
     },
     "events": {
-      "cc:remove_funiture": {
+      "cc:remove_furniture": {
         "add": {
           "component_groups": [
             "being_removed"

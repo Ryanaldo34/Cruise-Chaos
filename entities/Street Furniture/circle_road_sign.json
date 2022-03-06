@@ -2,7 +2,7 @@
     "format_version": "1.17.40",
     "minecraft:entity": {
         "description": {
-            "identifier": "cc:triangle_road_sign",
+            "identifier": "cc:circle_road_sign",
             "is_experimental": false,
             "is_spawnable": true,
             "is_summonable": true,
@@ -16,37 +16,32 @@
             }
         },
         "component_groups": {
-            "being_removed": {
-                "minecraft:variant": {
-                    "value": 1
-                }
-            },
-            "crossing": {
+            "circle": {
                 "minecraft:mark_variant": {
                     "value": 0
                 }
             },
-            "fallingrocks": {
+            "forty": {
                 "minecraft:mark_variant": {
                     "value": 1
                 }
             },
-            "t": {
+            "national": {
                 "minecraft:mark_variant": {
                     "value": 2
                 }
             },
-            "lights": {
+            "nostopping": {
                 "minecraft:mark_variant": {
                     "value": 3
                 }
             },
-            "warning": {
+            "overtaking": {
                 "minecraft:mark_variant": {
                     "value": 4
                 }
             },
-            "windingroad": {
+            "rightofway": {
                 "minecraft:mark_variant": {
                     "value": 5
                 }

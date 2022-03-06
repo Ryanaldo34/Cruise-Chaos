@@ -1,3 +1,85 @@
 {
+    "format_version": "1.17.40",
+    "minecraft:entity": {
+      "description": {
+        "identifier": "cc:sun_lounge",
+        "is_experimental": false,
+        "is_spawnable": true,
+        "is_summonable": true,
+        "animations": {
+          "remove": "controller.animation.removal",
+          "placement": "animation.placement"
+        },
+        "scripts": {
+          "animate": [
+            "remove",
+            "placement"
+          ]
+        }
+      },
+      "component_groups": {
+        "being_removed": {
+          "minecraft:variant": {
+            "value": 1
+          }
+        }
+      },
+      "components": {
+        "minecraft:type_family":{
+          "family": [
+            "furniture"
+          ]
+        },
+        "minecraft:physics": {},
+        "minecraft:collision_box": {
+          "height": 1,
+          "width": 1
+        },
+        "minecraft:interact": {
+          "interactions": [
+            {
+              "swing": true,
+              "add_items": {
+                "table": "loot_tables/sun_lounge.json"
   
-}
+              },
+              "use_item": false,
+              "interact_text": "action.interact.remove_furniture",
+              "on_interact": {
+                "filters": {
+                  "all_of": [
+                    {
+                      "test": "has_equipment",
+                      "subject": "other",
+                      "domain": "hand",
+                      "operator": "equals",
+                      "value": "stick"
+                    }
+                  ]
+                },
+                "event": "cc:remove_furniture",
+                "target": "self"
+              }
+            }
+          ]
+        },
+        "minecraft:pushable": {
+          "is_pushable": false,
+          "is_pushable_by_piston": true
+        },
+        "minecraft:is_stackable": {},
+        "minecraft:push_through": {
+          "value": 1
+        }
+      },
+      "events": {
+        "cc:remove_furniture": {
+          "add": {
+            "component_groups": [
+              "being_removed"
+            ]
+          }
+        }
+      }
+    }
+  }

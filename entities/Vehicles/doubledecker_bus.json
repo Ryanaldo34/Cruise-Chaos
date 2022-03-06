@@ -41,18 +41,6 @@
 					}
 				]
 			},
-			"minecraft:hurt_on_condition": {
-				"damage_conditions": [
-					{
-						"cause": "suffocation",
-						"damage_per_tick": 1
-					},
-					{
-						"cause": "lava",
-						"damage_per_tick": 1
-					}
-				]
-			},
 			"minecraft:movement": {
 				"value": 8,
 				"max": 8

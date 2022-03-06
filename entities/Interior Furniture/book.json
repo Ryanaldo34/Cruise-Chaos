@@ -73,7 +73,7 @@
       }
     },
     "events": {
-      "cc:remove_funiture": {
+      "cc:remove_furniture": {
         "add": {
           "component_groups": [
             "being_removed"

@@ -7,12 +7,14 @@
         "default": {
           "transitions": [
             {
-              "default": "query.variant == 0"
+              "removing": "query.variant == 1"
             }
           ]
         },
         "removing": {
-          "on_entry": [ "/function entity/remove" ]
+          "on_entry": [ 
+            "/function entity/remove"
+          ]
         }
       }
     }

@@ -20,7 +20,7 @@
     "component_groups": {
       "being_removed": {
         "minecraft:variant": {
-          "value": 0
+          "value": 1
         }
       },
       "purple": {
@@ -106,7 +106,7 @@
           ]
         }
       },
-      "cc:remove_funiture": {
+      "cc:remove_furniture": {
         "add": {
           "component_groups": [
             "being_removed"
@@ -119,7 +119,7 @@
             "filters": {
               "test": "is_mark_variant",
               "operator": "equals",
-              "value": 0
+              "value": 1
             },
             "remove": {
               "component_groups": [
@@ -136,7 +136,7 @@
             "filters": {
               "test": "is_mark_variant",
               "operator": "equals",
-              "value": 1
+              "value": 0
             },
             "remove": {
               "component_groups": [

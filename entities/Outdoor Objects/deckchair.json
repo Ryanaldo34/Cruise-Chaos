@@ -2,7 +2,7 @@
     "format_version": "1.17.40",
     "minecraft:entity": {
         "description": {
-            "identifier": "cc:bread_loaf",
+            "identifier": "cc:deckchair",
             "is_experimental": false,
             "is_spawnable": true,
             "is_summonable": true,
@@ -20,22 +20,27 @@
         "component_groups": {
             "being_removed": {
                 "minecraft:variant": {
-                    "value": 0
+                    "value": 1
                 }
             },
-            "loaf": {
+            "blue": {
                 "minecraft:mark_variant": {
                     "value": 0
                 }
             },
-            "oven": {
+            "green": {
                 "minecraft:mark_variant": {
                     "value": 1
                 }
             },
-            "rolls": {
+            "red": {
                 "minecraft:mark_variant": {
                     "value": 2
+                }
+            },
+            "yellow": {
+                "minecraft:mark_variant": {
+                    "value": 3
                 }
             }
         },
@@ -55,7 +60,7 @@
                     {
                         "swing": true,
                         "add_items": {
-                            "table": "loot_tables/bread_loaf.json"
+                            "table": "loot_tables/deckchair.json"
                         },
                         "use_item": false,
                         "interact_text": "action.interact.remove_furniture",
@@ -87,7 +92,7 @@
             }
         },
         "events": {
-            "cc:remove_funiture": {
+            "cc:remove_furniture": {
                 "add": {
                     "component_groups": [
                         "being_removed"
