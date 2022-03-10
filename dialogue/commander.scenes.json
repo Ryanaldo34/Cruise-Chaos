@@ -302,33 +302,13 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "You should be able to find them at the Lighthouse, the Shipyard, and Charlie's Garage. Just speak to me again if you need reminding of where you can find these parts."
+							"text": "You should be able to find them at the Lighthouse, the Shipyard, and Charlie's Garage. Once you have found them, bring them back to me here! Just speak to me again if you need reminding of where you can find these parts."
 						}
 					]
 				},
 				"on_close_commands": [
 					"/function quests/q2/seq_end"
 				]
-			},
-			{
-				"scene_tag": "qthree_repeat",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "You should be able to find a drift anchor at the Shipyard. They will have some spare floodlights at the Lighthouse. Charlie took the motor back to his Garage, you should be able to find it there."
-						}
-					]
-				}
 			},
 			{
 				"scene_tag": "qthree_return",
@@ -383,7 +363,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Once you're ready, go to the lifeboat and sail to the cruise ship."
+							"text": "I will get these parts installed and then once you're ready, go to the lifeboat and sail to the cruise ship."
 						}
 					]
 				},

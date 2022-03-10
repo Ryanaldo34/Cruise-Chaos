@@ -34,6 +34,9 @@
 							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_fires"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q4/seq_end"
 				]
 			},
 			{
@@ -68,6 +71,9 @@
 							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_power"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q4/seq_end"
 				]
 			},
 			{
@@ -102,6 +108,9 @@
 							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_exit"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q4/seq_end"
 				]
 			},
 			{
