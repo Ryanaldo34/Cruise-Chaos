@@ -3,6 +3,26 @@
 	"minecraft:npc_dialogue": {
 		"scenes": [
 			{
+				"scene_tag": "q2_hint",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "The Telecommunications factory is just to the east of here"
+						}
+					]
+				}
+			},
+			{
 				"scene_tag": "qtwo_return",
 				"npc_name": {
 					"rawtext": [
@@ -17,7 +37,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Ah! you're back so soon! I take it you didn't run into any trouble? "
+							"text": "Ah! you're back so soon! I take it you didn't run into any trouble?"
 						}
 					]
 				},
@@ -159,6 +179,118 @@
 				},
 				"on_close_commands": [
 					"/function quests/q2/seq_end"
+				]
+			},
+			{
+				"scene_tag": "qthree_repeat",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "You should be able to find a drift anchor at the Shipyard. They will have some spare floodlights at the Lighthouse. Charlie took the motor back to his Garage, you should be able to find it there."
+						}
+					]
+				}
+			},
+			{
+				"scene_tag": "qthree_return",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Oh good, you have all of the parts that are needed!"
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_sail",
+							"/tag @a add stop_scene"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qthree_sail",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Once you're ready, go to the lifeboat and sail to the cruise ship."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_running_late"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "qthree_running_late",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "I would go myself but I am running late for my salsa dance class."
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q3/seq_end"
 				]
 			}
 		]

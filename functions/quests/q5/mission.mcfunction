@@ -2,6 +2,7 @@ scoreboard players set "Engine Room" fires 0
 scoreboard players set "Jazz Sticks Club" fires 0
 scoreboard players set "Shopping Mall" fires 0
 scoreboard players set "Posh Restaurant Kitchen" fires 0
+scoreboard players set "Random Suite" fires 0
 scoreboard players set "Suite #6" fires 0
 execute @e[type=gus:fire,family=!doused,x=138,dx=70,y=50,dy=6,z=-101,dz=25] ~~~ scoreboard players add "Engine Room" fires 1
 execute @e[type=gus:fire,family=!doused,x=246,y=86,z=-90,r=25] ~~~ scoreboard players add "Jazz Sticks Club" fires 1

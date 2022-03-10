@@ -15,6 +15,7 @@ replaceitem block 930 65 519 slot.container 23 emerald  1 0
 replaceitem block 924 95 651 slot.container 14 gold_ingot 1 0
 replaceitem block 1078 87 568 slot.container 7 diamond 1 0
 event entity @e[type=gus:npc_2] minecraft:entity_spawned
+tag @e remove compass
 tag @e remove already_triggered_q2
 tag @e remove stop_scene
 tag @e remove scene4_opened

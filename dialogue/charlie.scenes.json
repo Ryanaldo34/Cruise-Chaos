@@ -3,6 +3,46 @@
 	"minecraft:npc_dialogue": {
 		"scenes": [
 			{
+				"scene_tag": "q1_hint",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "The commander will be at the MNLI Headquarters"
+						}
+					]
+				}
+			},
+			{
+				"scene_tag": "ship_status",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "How goes the situation with the cruise ship?"
+						}
+					]
+				}
+			},
+			{
 				"scene_tag": "intro",
 				"npc_name": {
 					"rawtext": [
@@ -34,6 +74,9 @@
 							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_question"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q1/seq_start"
 				]
 			},
 			{
@@ -68,6 +111,9 @@
 							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_make_way"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q1/seq_start"
 				]
 			},
 			{
@@ -102,6 +148,9 @@
 							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_headquarters"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q1/seq_start"
 				]
 			},
 			{
