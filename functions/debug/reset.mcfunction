@@ -25,6 +25,8 @@ tag @e remove gotten_all
 tag @e remove intro_triggered
 tag @e remove commander_intro_triggered
 tag @e remove collecting_parts
+tag @e remove q2_triggered
+tag @e remove q3_triggered
 tag @e remove q3_1
 tag @e remove q3_2
 tag @e remove q3_3
