@@ -363,6 +363,9 @@
 							"/tag @a add stop_scene"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q3/seq_end"
 				]
 			},
 			{
@@ -397,6 +400,9 @@
 							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_running_late"
 						]
 					}
+				],
+				"on_close_commands": [
+					"/function quests/q3/seq_end"
 				]
 			},
 			{
