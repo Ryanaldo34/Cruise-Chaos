@@ -1,0 +1,132 @@
+{
+	"format_version": "1.17.0",
+	"minecraft:npc_dialogue": {
+		"scenes": [
+			{
+				"scene_tag": "q4_intro",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_3.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "I am glad to see you! We have a little bit of a situation here if you can't tell."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_fires"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "q4_fires",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_3.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to find the fires and turn the sprinklers on to extinguish them."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"text": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_power"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "q4_power",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_3.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Once you've done that, you need to head to the engine room and restart the power."
+						}
+					]
+				},
+				"buttons": [
+					{
+						"name": {
+							"rawtext": [
+								{
+									"translate": "dialogue.button.name"
+								}
+							]
+						},
+						"commands": [
+							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_exit"
+						]
+					}
+				]
+			},
+			{
+				"scene_tag": "q4_exit",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_3.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Good luck!"
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q4/seq_end"
+				]
+			}
+		]
+	}
+}

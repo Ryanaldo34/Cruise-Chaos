@@ -7,11 +7,11 @@ execute @s[tag=already_triggered_all] ~~~ execute @p[x=890,y=68,z=606,r=12] ~~~ 
 execute @s[tag=already_triggered_all] ~~~ execute @p[x=890,y=68,z=606,r=12] ~~~ scoreboard players set @e[name=main] seq_tl 0
 execute @s[tag=gotten_all] ~~~ tag @a add already_triggered_all
 execute @s[tag=q3_3,tag=q3_2,tag=q3_1] ~~~ tag @a add gotten_all
-execute @s[tag=q3_1,tag=!c3_1,tag=!gotten_all] ~~~ title @a subtitle §6Ship Part #1 Found!
+execute @s[tag=q3_1,tag=!c3_1,tag=!gotten_all] ~~~ title @a subtitle §6Drift Anchor Found
 execute @s[tag=q3_1,tag=!c3_1,tag=!gotten_all] ~~~ function quests/on/update
-execute @s[tag=q3_2,tag=!c3_2,tag=!gotten_all] ~~~ title @a subtitle §6Ship Part #2 Found!
+execute @s[tag=q3_2,tag=!c3_2,tag=!gotten_all] ~~~ title @a subtitle §6Floodlights Found
 execute @s[tag=q3_2,tag=!c3_2,tag=!gotten_all] ~~~ function quests/on/update
-execute @s[tag=q3_3,tag=!c3_3,tag=!gotten_all] ~~~ title @a subtitle §6Ship Part #3 Found!
+execute @s[tag=q3_3,tag=!c3_3,tag=!gotten_all] ~~~ title @a subtitle §6Motor Found
 execute @s[tag=q3_3,tag=!c3_3,tag=!gotten_all] ~~~ function quests/on/update
 tag @s[tag=q3_1] add c3_1
 tag @s[tag=q3_2] add c3_2

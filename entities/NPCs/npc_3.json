@@ -6,12 +6,8 @@
 			"is_summonable": true,
 			"is_spawnable": true
 		},
-		"component_groups": {
-			"gus:show_hint": {
-				"minecraft:npc": {}
-			}
-		},
 		"components": {
+			"minecraft:npc": {},
 			"minecraft:navigation.generic": {},
 			"minecraft:movement.generic": {},
 			"minecraft:movement": {
@@ -40,59 +36,8 @@
 			"minecraft:nameable": {
 				"allow_name_tag_renaming": true,
 				"always_show": true
-			},
-			"minecraft:environment_sensor": {
-				"triggers": [
-					{
-						"filters": {
-							"all_of": [
-								{
-									"test": "has_component",
-									"value": "minecraft:npc",
-									"operator": "!="
-								},
-								{
-									"test": "has_tag",
-									"value": "give_hint"
-								}
-							]
-						},
-						"event": "gus:show_hint"
-					},
-					{
-						"filters": {
-							"all_of": [
-								{
-									"test": "has_component",
-									"value": "minecraft:npc"
-								},
-								{
-									"test": "has_tag",
-									"value": "give_hint",
-									"operator": "!="
-								}
-							]
-						},
-						"event": "gus:hide_hint"
-					}
-				]
 			}
 		},
-		"events": {
-			"gus:show_hint": {
-				"add": {
-					"component_groups": [
-						"gus:show_hint"
-					]
-				}
-			},
-			"gus:hide_hint": {
-				"remove": {
-					"component_groups": [
-						"gus:show_hint"
-					]
-				}
-			}
-		}
+		"events": {}
 	}
 }

@@ -1,0 +1,25 @@
+{
+    "format_version": "1.17.0",
+    "animation_controllers": {
+        "controller.animation.finish_trades": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "remove_trades": "query.trade_tier == 2"
+                        }
+                    ]
+                },
+                "remove_trades": {
+                    "on_entry": [ "/scoreboard players set @a seq 3" ],
+                    "transitions": [
+                        {
+                            "default": "query.trade_tier == 0"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

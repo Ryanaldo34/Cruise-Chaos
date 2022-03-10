@@ -10,19 +10,19 @@
 		"components": {
 			"minecraft:behavior.rise_to_liquid_level": {
 				"priority": 0,
-				"liquid_y_offset": 0.5,
+				"liquid_y_offset": 0.25,
 				"rise_delta": 0.05,
-				"sink_delta": 0.05
+				"sink_delta": 0
 			},
 			"minecraft:underwater_movement": {
-				"value": 5
+				"value": 0.4
 			},
 			"minecraft:navigation.walk": {
 				"can_sink": false
 			},
 			"minecraft:rideable": {
 				"seat_count": 4,
-				"controlling_seat": 1,
+				"controlling_seat": 0,
 				"family_types": [
 					"player"
 				],
@@ -68,7 +68,7 @@
 				"max": 10
 			},
 			"minecraft:movement": {
-				"value": 0.1
+				"value": 0
 			},
 			"minecraft:movement.basic": {},
 			"minecraft:collision_box": {

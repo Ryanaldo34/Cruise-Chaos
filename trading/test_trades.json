@@ -1,0 +1,73 @@
+{
+    "tiers": [
+        {
+            "total_exp_required": 0,
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "minecraft:emerald",
+                            "quantity": 1,
+                            "price_multiplier": 0
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:string",
+                            "quantity": 1
+                        }
+                    ],
+                    "max_uses": 1,
+                    "trader_exp": 10,
+                    "reward_exp": false
+                }
+            ]
+        },
+        {
+            "total_exp_required": 10,
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "minecraft:gold_ingot",
+                            "quantity": 1,
+                            "price_multiplier": 0
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:diamond_axe",
+                            "quantity": 1
+                        }
+                    ],
+                    "max_uses": 1,
+                    "trader_exp": 10,
+                    "reward_exp": false
+                }
+            ]
+        },
+        {
+            "total_exp_required": 20,
+            "trades": [
+                {
+                    "wants": [
+                        {
+                            "item": "minecraft:diamond",
+                            "quantity": 1,
+                            "price_multiplier": 0
+                        }
+                    ],
+                    "gives": [
+                        {
+                            "item": "minecraft:coal:0",
+                            "quantity": 1
+                        }
+                    ],
+                    "max_uses": 1,
+                    "trader_exp": 0,
+                    "reward_exp": false
+                }
+            ]
+        }
+    ]
+}

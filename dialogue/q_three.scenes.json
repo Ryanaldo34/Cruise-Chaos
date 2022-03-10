@@ -51,7 +51,8 @@
 							]
 						},
 						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_sail"
+							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_sail",
+							"/tag @a add stop_scene"
 						]
 					}
 				]

@@ -4,18 +4,47 @@
 		"description": {
 			"identifier": "gus:npc_2",
 			"is_summonable": true,
-			"is_spawnable": true
+			"is_spawnable": true,
+			"animations": {
+				"finish_trades": "controller.animation.finish_trades"
+			},
+			"scripts": {
+				"animate": [
+					"finish_trades"
+				]
+			}
 		},
-		"component_groups": {},
+		"component_groups": {
+			"cc:tradeable": {
+				"minecraft:behavior.trade_with_player": {
+					"priority": 0
+				},
+				"minecraft:behavior.trade_interest": {
+					"priority": 2,
+					"carried_item_switch_time": 2,
+					"cooldown": 2,
+					"interest_time": 45,
+					"remove_item_time": 4,
+					"within_radius": 12
+				},
+				"minecraft:economy_trade_table": {
+					"display_name": "Trade The Parts!",
+					"new_screen": true,
+					"table": "trading/test_trades.json"
+				}
+			},
+			"cc:npc": {
+				"minecraft:npc": {}
+			}
+		},
 		"components": {
-			"minecraft:npc": {},
 			"minecraft:navigation.generic": {},
 			"minecraft:movement.generic": {},
 			"minecraft:movement": {
 				"value": 0
 			},
 			"minecraft:behavior.look_at_player": {
-				"priority": 0,
+				"priority": 1,
 				"probability": 1
 			},
 			"minecraft:collision_box": {
@@ -39,6 +68,26 @@
 				"always_show": true
 			}
 		},
-		"events": {}
+		"events": {
+			"minecraft:entity_spawned": {
+				"add": {
+					"component_groups": [
+						"cc:npc"
+					]
+				}
+			},
+			"cc:set_trades": {
+				"add":{
+					"component_groups": [
+						"cc:tradeable"
+					]
+				},
+				"remove": {
+					"component_groups": [
+						"cc:npc"
+					]
+				}
+			}
+		}
 	}
 }

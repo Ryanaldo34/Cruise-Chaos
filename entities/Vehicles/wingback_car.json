@@ -42,8 +42,8 @@
         ]
       },
       "minecraft:movement": {
-        "value": 0.8,
-        "max": 0.8
+        "value": 0.5,
+        "max": 0.6
       },
       "minecraft:navigation.generic": {},
       "minecraft:movement.basic": {

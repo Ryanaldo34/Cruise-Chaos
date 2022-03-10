@@ -10,12 +10,12 @@
 		"components": {
 			"minecraft:behavior.rise_to_liquid_level": {
 				"priority": 0,
-				"liquid_y_offset": 0.5,
+				"liquid_y_offset": 0.25,
 				"rise_delta": 0.05,
-				"sink_delta": 0.05
+				"sink_delta": 0
 			},
 			"minecraft:underwater_movement": {
-				"value": 5
+				"value": 0.5
 			},
 			"minecraft:navigation.walk": {
 				"can_sink": false
