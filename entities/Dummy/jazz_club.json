@@ -1,0 +1,38 @@
+{
+	"format_version": "1.18.10",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cc:jazz_club",
+			"is_summonable": true,
+			"is_spawnable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:nameable": {
+				"allow_name_tag_renaming": true,
+				"always_show": false
+			},
+			"minecraft:type_family": {
+				"family": [
+					"dummy"
+				]
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+			},
+			"minecraft:pushable": {
+				"is_pushable": false,
+				"is_pushable_by_piston": false
+			},
+			"minecraft:collision_box": {
+				"width": 0.0001,
+				"height": 0.0001
+			}
+		}
+	}
+}

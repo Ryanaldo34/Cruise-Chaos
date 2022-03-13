@@ -1,0 +1,49 @@
+{
+    "format_version": "1.17.0",
+    "animation_controllers": {
+        "controller.animation.extinguisher_replenish": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/function entity/replenish_player"
+                    ],
+                    "transitions": [
+                        {
+                            "replenish": "query.is_item_name_any('slot.hotbar', 1, 'minecraft:splash_potion')"
+                        }
+                    ]
+                },
+                "replenish": {
+                    "transitions": [
+                        {
+                            "default": "!query.is_item_name_any('slot.hotbar', 1, 'minecraft:splash_potion')" 
+                        }
+                    ]
+                }
+            }
+        },
+        "controller.animation.heal_replenish": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "on_entry": [
+                        "/function entity/replenish_player"
+                    ],
+                    "transitions": [
+                        {
+                            "replenish": "query.is_item_name_any('slot.hotbar', 3, 'minecraft:potion')"
+                        }
+                    ]
+                },
+                "replenish": {
+                    "transitions": [
+                        {
+                            "default": "!query.is_item_name_any('slot.hotbar', 3, 'minecraft:potion')" 
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

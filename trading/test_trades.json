@@ -6,14 +6,14 @@
                 {
                     "wants": [
                         {
-                            "item": "minecraft:emerald",
+                            "item": "cc:key",
                             "quantity": 1,
                             "price_multiplier": 0
                         }
                     ],
                     "gives": [
                         {
-                            "item": "minecraft:string",
+                            "item": "minecraft:splash_potion",
                             "quantity": 1
                         }
                     ],
@@ -29,7 +29,7 @@
                 {
                     "wants": [
                         {
-                            "item": "minecraft:gold_ingot",
+                            "item": "cc:searchlight",
                             "quantity": 1,
                             "price_multiplier": 0
                         }
@@ -52,14 +52,14 @@
                 {
                     "wants": [
                         {
-                            "item": "minecraft:diamond",
+                            "item": "cc:fuel_canister",
                             "quantity": 1,
                             "price_multiplier": 0
                         }
                     ],
                     "gives": [
                         {
-                            "item": "minecraft:coal:0",
+                            "item": "minecraft:potion:21",
                             "quantity": 1
                         }
                     ],

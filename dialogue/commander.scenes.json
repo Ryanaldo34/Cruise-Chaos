@@ -37,7 +37,27 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "You should be able to find a drift anchor at the Shipyard. They will have some spare floodlights at the Lighthouse. Charlie took the motor back to his Garage, you should be able to find it there."
+							"text": "You should be able to find the fuel canister at the Shipyard. They will have the search light at the Lighthouse. Charlie took the key back to his Garage, you should be able to find it there."
+						}
+					]
+				}
+			},
+			{
+				"scene_tag": "q4_hint",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Use our helicopter to fly to the cruise ship. Charlie will meet you there later on the boat to rescue passengers if need be."
 						}
 					]
 				}
@@ -111,9 +131,6 @@
 							"/dialogue open @e[type=gus:npc_2,c=1] @a qone_satelite"
 						]
 					}
-				],
-				"on_close_commands": [
-					"/function quests/q1/seq_end"
 				]
 			},
 			{
@@ -134,10 +151,7 @@
 							"text": "I believe we should be able to reach them if we realign one of the satellite dishes on the factory to the east of here, you wouldn't mind going over and doing that for me, please?"
 						}
 					]
-				},
-				"on_close_commands": [
-					"/function quests/q1/seq_end"
-				]
+				}
 			},
 			{
 				"scene_tag": "qtwo_return",
@@ -191,44 +205,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Whilst I am establishing a connection with the cruise ship, you should go and see whether you can get the lifeboat fixed up."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_fix"
-						]
-					}
-				],
-				"on_close_commands": [
-					"/function quests/q2/seq_end"
-				]
-			},
-			{
-				"scene_tag": "qtwo_fix",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Unfortunately, our new one is being borrowed by a neighboring coast guard, so the old one will need to be fixed instead."
+							"text": "Whilst I am establishing a connection with the cruise ship, you should go and see whether you can get the helicopter geared up."
 						}
 					]
 				},
@@ -245,9 +222,6 @@
 							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_parts"
 						]
 					}
-				],
-				"on_close_commands": [
-					"/function quests/q2/seq_end"
 				]
 			},
 			{
@@ -265,7 +239,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "We only need three more parts for it: a drift anchor, a floodlight, and a new motor."
+							"text": "We only need three parts for it: a search light, a fuel canister, and the keys that Charlie has seemingly misplaced."
 						}
 					]
 				},
@@ -282,9 +256,6 @@
 							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_locations"
 						]
 					}
-				],
-				"on_close_commands": [
-					"/function quests/q2/seq_end"
 				]
 			},
 			{
@@ -325,7 +296,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Oh good, you have all of the parts that are needed!"
+							"text": "Oh good, you have given me all of the parts that are needed!"
 						}
 					]
 				},
@@ -345,7 +316,8 @@
 					}
 				],
 				"on_close_commands": [
-					"/function quests/q3/seq_end"
+					"/function quests/q3/seq_end",
+					"/tag @a add stop_scene"
 				]
 			},
 			{
@@ -363,7 +335,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "I will get these parts installed and then once you're ready, go to the lifeboat and sail to the cruise ship."
+							"text": "I managed to establish a connection with the ship and I have given you some supplies that you may need when you reach the cruise ship. You can take the helicopter now and Charlie will join you to rescue passengers if needed."
 						}
 					]
 				},
@@ -380,9 +352,6 @@
 							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_running_late"
 						]
 					}
-				],
-				"on_close_commands": [
-					"/function quests/q3/seq_end"
 				]
 			},
 			{
@@ -400,12 +369,32 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "I would go myself but I am running late for my salsa dance class."
+							"text": "The helicopter will be by the lighthouse. Good luck!"
+						}
+					]
+				}
+			},
+			{
+				"scene_tag": "final",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_2.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "Just got word from the Captain of the good work you’ve done. He has even put your name forward for an award! You’ve made us all proud! You can now hang around the town and we will let you know if we need you again!"
 						}
 					]
 				},
 				"on_close_commands": [
-					"/function quests/q3/seq_end"
+					"/tag @a add game_complete"
 				]
 			}
 		]

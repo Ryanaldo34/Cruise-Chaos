@@ -54,7 +54,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to find the fires and turn the sprinklers on to extinguish them."
+							"text": "We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to use your extinguisher to put them out!"
 						}
 					]
 				},
@@ -135,6 +135,26 @@
 				"on_close_commands": [
 					"/function quests/q4/seq_end"
 				]
+			},
+			{
+				"scene_tag": "q5_end",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_3.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "We have power back online! Well done my friend! We can now continue this cruise in peace!"
+						}
+					]
+				}
 			}
 		]
 	}

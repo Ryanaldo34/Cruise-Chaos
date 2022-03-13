@@ -1,0 +1,14 @@
+{
+    "format_version": "1.17.0",
+    "animations": {
+        "animation.fire.extinguish": {
+            "loop": true,
+            "animation_length": 0.1,
+            "timeline": {
+                "0.0":[
+                    "/execute @s ~~~ detect ~~~ air -1 function entity/fire_extinguish"
+                ]
+            }
+        }
+    }
+}

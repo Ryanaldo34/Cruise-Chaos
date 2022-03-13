@@ -175,6 +175,29 @@
 				"on_close_commands": [
 					"/function quests/q1/seq_start"
 				]
+			},
+			{
+				"scene_tag": "q5_return",
+				"npc_name": {
+					"rawtext": [
+						{
+							"translate": "entity.gus:npc_1.name",
+							"with": [
+								"\n"
+							]
+						}
+					]
+				},
+				"text": {
+					"rawtext": [
+						{
+							"text": "You did great today! I will see that the commander hears about your heroics here today! Take some time to relax, then take the helicopter back to the commander to debrief."
+						}
+					]
+				},
+				"on_close_commands": [
+					"/function quests/q5/exit"
+				]
 			}
 		]
 	}

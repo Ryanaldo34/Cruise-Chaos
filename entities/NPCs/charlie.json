@@ -11,6 +11,11 @@
 			"minecraft:npc": {},
 			"minecraft:navigation.generic": {},
 			"minecraft:movement.generic": {},
+			"minecraft:tick_world": {
+				"distance_to_players": 128,
+				"never_despawn": true,
+				"radius": 2
+			},
 			"minecraft:movement": {
 				"value": 0
 			},

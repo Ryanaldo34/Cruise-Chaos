@@ -1,0 +1,201 @@
+{
+    "format_version": "1.17.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "cc:fire",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "is_experimental": false,
+            "animations": {
+                "manager": "controller.animation.fire.manager",
+                "multiply": "controller.animation.fire.multiply",
+                "extinguish": "animation.fire.extinguish"
+            },
+            "scripts": {
+                "animate": [
+                    "manager",
+                    "multiply"
+                ]
+            }
+        },
+        "component_groups": {
+            "fire:spawn_timer": {
+                "minecraft:timer": {
+                    "time": 15,
+                    "looping": true,
+                    "time_down_event":{
+                        "event": "cc:fire_multiply",
+                        "target": "self"
+                    }
+                }
+            },
+            "fire:readd_timer": {
+                "minecraft:timer": {
+                    "time": 2,
+                    "looping": true,
+                    "time_down_event":{
+                        "event": "cc:fire_add_timer",
+                        "target": "self"
+                    }
+                }
+            },
+            "fire:engine_room": {
+                "minecraft:type_family": {
+                    "family": [
+                        "engine_room"
+                    ]
+                }
+            },
+            "fire:jazz_club": {
+                "minecraft:type_family": {
+                    "family": [
+                        "jazz_club"
+                    ]
+                }
+            },
+            "fire:shopping_mall": {
+                "minecraft:type_family": {
+                    "family": [
+                        "shopping_mall"
+                    ]
+                }
+            },
+            "fire:kitchen": {
+                "minecraft:type_family": {
+                    "family": [
+                        "kitchen"
+                    ]
+                }
+            },
+            "fire:suite": {
+                "minecraft:type_family": {
+                    "family": [
+                        "suite"
+                    ]
+                }
+            },
+            "fire:multiply": {
+                "minecraft:is_saddled": {}
+            },
+            "fire:add_to_scores": {
+                "minecraft:is_ignited": {}
+            }
+        },
+        "components": {
+            "minecraft:tick_world": {
+                "distance_to_players": 128,
+                "never_despawn": true,
+                "radius": 2
+            },
+            "minecraft:physics": {
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": false
+            },
+            "minecraft:collision_box": {
+                "height": 0.1,
+                "width": 0.1
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:push_through": {
+                "value": 2
+            },
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": false
+                    }
+                ]
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "fire:add_to_scores"
+                    ]
+                }
+            },
+            "cc:extinguish_fires": {
+                "remove": {
+                    "component_groups": [
+                        "fire:add_to_scores"
+                    ]
+                }
+            },
+            "cc:fire_multiply": {
+                "remove": {
+                    "component_groups": [
+                        "fire:spawn_timer"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "fire:multiply",
+                        "fire:readd_timer"
+                    ]
+                }
+            },
+            "cc:fire_add_timer": {
+                "remove": {
+                    "component_groups": [
+                        "fire:multiply",
+                        "fire:readd_timer"
+                    ]
+                },
+                "add": {
+                    "component_groups": [
+                        "fire:spawn_timer"
+                    ]
+                }
+            },
+            "cc:jazz_club": {
+                "add": {
+                    "component_groups": [
+                        "fire:jazz_club",
+                        "fire:add_to_scores",
+                        "fire:spawn_timer"
+                    ]
+                }
+            },
+            "cc:shopping_mall": {
+                "add": {
+                    "component_groups": [
+                        "fire:shopping_mall",
+                        "fire:add_to_scores",
+                        "fire:spawn_timer"
+                    ]
+                }
+            },
+            "cc:kitchen": {
+                "add": {
+                    "component_groups": [
+                        "fire:kitchen",
+                        "fire:add_to_scores",
+                        "fire:spawn_timer"
+                    ]
+                }
+            },
+            "cc:suite": {
+                "add": {
+                    "component_groups": [
+                        "fire:suite",
+                        "fire:add_to_scores",
+                        "fire:spawn_timer"
+                    ]
+                }
+            },
+            "cc:engine_room": {
+                "add": {
+                    "component_groups": [
+                        "fire:engine_room",
+                        "fire:add_to_scores",
+                        "fire:spawn_timer"
+                    ]
+                }
+            }
+        }
+    }
+}

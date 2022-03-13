@@ -6,4 +6,4 @@ execute @a[tag=!q3_triggered] ~~~ function quests/on/start
 scoreboard players set @a quest 3
 scoreboard players set @a seq 1
 tag @s add q3_triggered
-dialogue change @e[type=gus:npc_2] q3_hint @p
+dialogue change @e[type=gus:npc_2] q3_hint @a

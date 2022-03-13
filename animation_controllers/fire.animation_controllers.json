@@ -1,0 +1,50 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.fire.manager": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"on_entry": [
+						"/function entity/fire_tracker"
+					],
+					"animations": [
+						"extinguish"
+					],
+					"transitions": [
+						{
+							"extinguish": "!query.is_ignited"
+						}
+					]
+				},
+				"extinguish": {
+					"on_entry": [
+						"/function entity/fire_extinguish"
+					]
+				}
+			}
+		},
+		"controller.animation.fire.multiply": {
+			"initial_state": "default",
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"multiply": "query.is_saddled"
+						}
+					]
+				},
+				"multiply": {
+					"on_entry": [
+						"/function entity/fire_multiply"
+					],
+					"transitions": [
+						{
+							"default": "!query.is_saddled"
+						}
+					]
+				}
+			}
+		}
+	}
+}
