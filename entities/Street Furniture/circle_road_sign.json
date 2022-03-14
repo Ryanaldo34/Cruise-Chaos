@@ -7,47 +7,236 @@
             "is_spawnable": true,
             "is_summonable": true,
             "animations": {
-                "remove": "controller.animation.removal"
-            },
-            "scripts": {
+                "remove": "controller.animation.removal",
+                "placement": "controller.animation.placement"
+              },
+              "scripts": {
                 "animate": [
-                    "remove"
+                  "remove",
+                  "placement"
                 ]
-            }
+              }
         },
         "component_groups": {
-            "circle": {
-                "minecraft:mark_variant": {
-                    "value": 0
+            "being_removed": {
+                "minecraft:variant": {
+                    "value": 1
                 }
             },
             "forty": {
                 "minecraft:mark_variant": {
-                    "value": 1
+                    "value": 0
                 }
             },
             "national": {
                 "minecraft:mark_variant": {
-                    "value": 2
+                    "value": 1
                 }
             },
             "nostopping": {
                 "minecraft:mark_variant": {
-                    "value": 3
+                    "value": 2
                 }
             },
             "overtaking": {
                 "minecraft:mark_variant": {
-                    "value": 4
+                    "value": 3
                 }
             },
             "rightofway": {
                 "minecraft:mark_variant": {
-                    "value": 5
+                    "value": 4
                 }
             }
         },
-        "components": {},
-        "events": {}
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "furniture"
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:collision_box": {
+                "height": 3,
+                "width": 1
+            },
+            "minecraft:breathable": {
+                "total_supply": 2,
+                "suffocate_time": 0,
+                "inhale_time": 10
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_attack",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "projectile",
+                            "deals_damage": false
+                        }
+                    ]
+                },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "swing": true,
+                        "add_items": {
+                            "table": "loot_tables/furniture.json"
+                        },
+                        "use_item": false,
+                        "interact_text": "action.interact.remove_furniture",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "domain": "hand",
+                                        "operator": "equals",
+                                        "value": "cc:rotate_tool"
+                                    }
+                                ]
+                            },
+                            "event": "cc:remove_furniture",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "swing": true,
+                        "use_item": false,
+                        "interact_text": "action.interact.paint",
+                        "on_interact": {
+                            "filters": {
+                                "test": "has_equipment",
+                                "subject": "other",
+                                "domain": "hand",
+                                "operator": "equals",
+                                "value": "cc:repainting_tool"
+                            },
+                            "event": "cc:paint_furniture",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:push_through": {
+                "value": 1
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "forty"
+                    ]
+                }
+            },
+            "cc:remove_furniture": {
+                "add": {
+                    "component_groups": [
+                        "being_removed"
+                    ]
+                }
+            },
+            "cc:paint_furniture": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 4
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "rightofway"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "forty"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 3
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "overtaking"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "rightofway"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 2
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "nostopping"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "overtaking"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 1
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "national"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "nostopping"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 0
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "forty"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "national"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
     }
 }

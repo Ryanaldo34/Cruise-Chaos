@@ -8,14 +8,14 @@
             "is_summonable": true,
             "animations": {
                 "remove": "controller.animation.removal",
-                "placement": "animation.placement"
-            },
-            "scripts": {
+                "placement": "controller.animation.placement"
+              },
+              "scripts": {
                 "animate": [
-                    "remove",
-                    "placement"
+                  "remove",
+                  "placement"
                 ]
-            }
+              }
         },
         "component_groups": {
             "being_removed": {
@@ -43,14 +43,35 @@
             "minecraft:physics": {},
             "minecraft:collision_box": {
                 "height": 3,
-                "width": 1
+                "width": 1.5
             },
+            "minecraft:breathable": {
+                "total_supply": 2,
+                "suffocate_time": 0,
+                "inhale_time": 10
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_attack",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "projectile",
+                            "deals_damage": false
+                        }
+                    ]
+                },
             "minecraft:interact": {
                 "interactions": [
                     {
                         "swing": true,
                         "add_items": {
-                            "table": "loot_tables/book.json"
+                            "table": "loot_tables/furniture.json"
                         },
                         "use_item": false,
                         "interact_text": "action.interact.remove_furniture",
@@ -62,7 +83,7 @@
                                         "subject": "other",
                                         "domain": "hand",
                                         "operator": "equals",
-                                        "value": "stick"
+                                        "value": "cc:rotate_tool"
                                     }
                                 ]
                             },
@@ -80,7 +101,7 @@
                                 "subject": "other",
                                 "domain": "hand",
                                 "operator": "equals",
-                                "value": "flint"
+                                "value": "cc:repainting_tool"
                             },
                             "event": "cc:paint_furniture",
                             "target": "self"

@@ -36,7 +36,7 @@
       "minecraft:damage_sensor": {
         "triggers": [
           {
-            "cause": "entity_attack",
+            "cause": "all",
             "deals_damage": false
           }
         ]

@@ -8,7 +8,7 @@
       "is_summonable": true,
       "animations": {
         "remove": "controller.animation.removal",
-        "placement": "animation.placement"
+        "placement": "controller.animation.placement"
       },
       "scripts": {
         "animate": [
@@ -35,20 +35,33 @@
         "height": 1,
         "width": 1
       },
-      "minecraft:damage_sensor":{
-        "triggers": [
-          {
-            "cause": "all",
-            "deals_damage": false
-          }
-        ]
+      "minecraft:breathable": {
+        "total_supply": 2,
+        "suffocate_time": 0,
+        "inhale_time": 10
+      },
+      "minecraft:damage_sensor": {
+          "triggers": [
+              {
+                  "cause": "entity_attack",
+                  "deals_damage": false
+              },
+              {
+                  "cause": "fire",
+                  "deals_damage": false
+              },
+              {
+                  "cause": "projectile",
+                  "deals_damage": false
+              }
+          ]
       },
       "minecraft:interact": {
         "interactions": [
           {
             "swing": true,
             "add_items": {
-              "table": "loot_tables/barista_machine.json"
+              "table": "loot_tables/furniture.json"
 
             },
             "use_item": false,
@@ -59,7 +72,7 @@
                   "subject": "other",
                   "domain": "hand",
                   "operator": "equals",
-                  "value": "stick"
+                  "value": "cc:rotate_tool"
               },
               "event": "cc:remove_furniture",
               "target": "self"

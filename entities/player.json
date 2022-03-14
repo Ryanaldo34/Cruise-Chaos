@@ -168,7 +168,8 @@
         },
         "minecraft:push_through": {
             "value": 1
-        }
+        },
+        "minecraft:is_stackable": {}
       },
   
       "events": {

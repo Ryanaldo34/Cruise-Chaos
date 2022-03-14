@@ -7,13 +7,15 @@
             "is_spawnable": true,
             "is_summonable": true,
             "animations": {
-                "remove": "controller.animation.removal"
-            },
-            "scripts": {
+                "remove": "controller.animation.removal",
+                "placement": "controller.animation.placement"
+              },
+              "scripts": {
                 "animate": [
-                    "remove"
+                  "remove",
+                  "placement"
                 ]
-            }
+              }
         },
         "component_groups": {
             "being_removed": {
@@ -52,7 +54,211 @@
                 }
             }
         },
-        "components": {},
-        "events": {}
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "furniture"
+                ]
+            },
+            "minecraft:physics": {},
+            "minecraft:collision_box": {
+                "height": 3,
+                "width": 1
+            },
+            "minecraft:breathable": {
+                "total_supply": 2,
+                "suffocate_time": 0,
+                "inhale_time": 10
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_attack",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "projectile",
+                            "deals_damage": false
+                        }
+                    ]
+                },
+            "minecraft:interact": {
+                "interactions": [
+                    {
+                        "swing": true,
+                        "add_items": {
+                            "table": "loot_tables/furniture.json"
+                        },
+                        "use_item": false,
+                        "interact_text": "action.interact.remove_furniture",
+                        "on_interact": {
+                            "filters": {
+                                "all_of": [
+                                    {
+                                        "test": "has_equipment",
+                                        "subject": "other",
+                                        "domain": "hand",
+                                        "operator": "equals",
+                                        "value": "cc:rotate_tool"
+                                    }
+                                ]
+                            },
+                            "event": "cc:remove_furniture",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "swing": true,
+                        "use_item": false,
+                        "interact_text": "action.interact.paint",
+                        "on_interact": {
+                            "filters": {
+                                "test": "has_equipment",
+                                "subject": "other",
+                                "domain": "hand",
+                                "operator": "equals",
+                                "value": "cc:repainting_tool"
+                            },
+                            "event": "cc:paint_furniture",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
+            "minecraft:pushable": {
+                "is_pushable": false,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:is_stackable": {},
+            "minecraft:push_through": {
+                "value": 1
+            }
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "crossing"
+                    ]
+                }
+            },
+            "cc:remove_furniture": {
+                "add": {
+                    "component_groups": [
+                        "being_removed"
+                    ]
+                }
+            },
+            "cc:paint_furniture": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 5
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "windingroad"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "warning"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 4
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "warning"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "lights"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 3
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "lights"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "t"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 2
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "t"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "fallingrocks"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 1
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "fallingrocks"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "crossing"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 0
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "crossing"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "windingroad"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
     }
 }

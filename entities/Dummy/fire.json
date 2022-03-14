@@ -101,10 +101,23 @@
             "minecraft:push_through": {
                 "value": 2
             },
+            "minecraft:breathable": {
+                "total_supply": 2,
+                "suffocate_time": 0,
+                "inhale_time": 10
+            },
             "minecraft:damage_sensor": {
                 "triggers": [
                     {
-                        "cause": "all",
+                        "cause": "entity_attack",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "fire",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "projectile",
                         "deals_damage": false
                     }
                 ]

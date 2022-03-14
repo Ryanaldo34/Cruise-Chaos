@@ -8,19 +8,19 @@
             "is_summonable": true,
             "animations": {
                 "remove": "controller.animation.removal",
-                "placement": "animation.placement"
-            },
-            "scripts": {
+                "placement": "controller.animation.placement"
+              },
+              "scripts": {
                 "animate": [
-                    "remove",
-                    "placement"
+                  "remove",
+                  "placement"
                 ]
-            }
+              }
         },
         "component_groups": {
             "being_removed": {
                 "minecraft:variant": {
-                    "value": 0
+                    "value": 1
                 }
             },
             "loaf": {
@@ -50,12 +50,33 @@
                 "height": 1,
                 "width": 1
             },
+            "minecraft:breathable": {
+                "total_supply": 2,
+                "suffocate_time": 0,
+                "inhale_time": 10
+                },
+                "minecraft:damage_sensor": {
+                    "triggers": [
+                        {
+                            "cause": "entity_attack",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "fire",
+                            "deals_damage": false
+                        },
+                        {
+                            "cause": "projectile",
+                            "deals_damage": false
+                        }
+                    ]
+                },
             "minecraft:interact": {
                 "interactions": [
                     {
                         "swing": true,
                         "add_items": {
-                            "table": "loot_tables/bread_loaf.json"
+                            "table": "loot_tables/furniture.json"
                         },
                         "use_item": false,
                         "interact_text": "action.interact.remove_furniture",
@@ -67,11 +88,27 @@
                                         "subject": "other",
                                         "domain": "hand",
                                         "operator": "equals",
-                                        "value": "stick"
+                                        "value": "cc:rotate_tool"
                                     }
                                 ]
                             },
                             "event": "cc:remove_furniture",
+                            "target": "self"
+                        }
+                    },
+                    {
+                        "swing": true,
+                        "use_item": false,
+                        "interact_text": "action.interact.paint",
+                        "on_interact": {
+                            "filters": {
+                                "test": "has_equipment",
+                                "subject": "other",
+                                "domain": "hand",
+                                "operator": "equals",
+                                "value": "cc:repainting_tool"
+                            },
+                            "event": "cc:paint_furniture",
                             "target": "self"
                         }
                     }
@@ -87,12 +124,74 @@
             }
         },
         "events": {
-            "cc:remove_funiture": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "loaf"
+                    ]
+                }
+            },
+            "cc:remove_furniture": {
                 "add": {
                     "component_groups": [
                         "being_removed"
                     ]
                 }
+            },
+            "cc:paint_furniture": {
+                "sequence": [
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 2
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "rolls"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "loaf"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 1
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "oven"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "rolls"
+                            ]
+                        }
+                    },
+                    {
+                        "filters": {
+                            "test": "is_mark_variant",
+                            "operator": "equals",
+                            "value": 0
+                        },
+                        "remove": {
+                            "component_groups": [
+                                "loaf"
+                            ]
+                        },
+                        "add": {
+                            "component_groups": [
+                                "oven"
+                            ]
+                        }
+                    }
+                ]
             }
         }
     }
