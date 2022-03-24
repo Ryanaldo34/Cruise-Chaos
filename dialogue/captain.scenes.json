@@ -3,6 +3,10 @@
 	"minecraft:npc_dialogue": {
 		"scenes": [
 			{
+				"on_open_commands": [
+					"/playsound voice_lines.captain.captain_q4_lines @a",
+					"/tag @a add scene4_opened"
+				],
 				"scene_tag": "q4_intro",
 				"npc_name": {
 					"rawtext": [
@@ -17,7 +21,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "I am glad to see you! We have a little bit of a situation here if you can't tell."
+							"text": "I am glad to see you! We have a little bit of a situation here if you can't tell. We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to use your extinguisher to put them out! Once you've done that, you need to head to the engine room and restart the power. Good luck!"
 						}
 					]
 				},
@@ -26,7 +30,7 @@
 						"name": {
 							"rawtext": [
 								{
-									"translate": "dialogue.button.name"
+									"text": "§6Begin Quest"
 								}
 							]
 						},
@@ -40,103 +44,9 @@
 				]
 			},
 			{
-				"scene_tag": "q4_fires",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_3.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to use your extinguisher to put them out!"
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"text": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_power"
-						]
-					}
+				"on_open_commands": [
+					"/playsound voice_lines.captain.captain_q5_lines @a"
 				],
-				"on_close_commands": [
-					"/function quests/q4/seq_end"
-				]
-			},
-			{
-				"scene_tag": "q4_power",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_3.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Once you've done that, you need to head to the engine room and restart the power."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_3, c=1] @a q4_exit"
-						]
-					}
-				],
-				"on_close_commands": [
-					"/function quests/q4/seq_end"
-				]
-			},
-			{
-				"scene_tag": "q4_exit",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_3.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Good luck!"
-						}
-					]
-				},
-				"on_close_commands": [
-					"/function quests/q4/seq_end"
-				]
-			},
-			{
 				"scene_tag": "q5_end",
 				"npc_name": {
 					"rawtext": [
@@ -154,7 +64,10 @@
 							"text": "We have power back online! Well done my friend! We can now continue this cruise in peace!"
 						}
 					]
-				}
+				},
+				"on_close_commands": [
+					"/stopsound @a voice_lines.captain.captain_q5_lines"
+				]
 			}
 		]
 	}

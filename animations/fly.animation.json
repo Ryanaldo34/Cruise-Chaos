@@ -5,8 +5,19 @@
       "animation_length": 0.1,
       "loop": true,
       "timeline": {
-        "0.0":[ "/function entity/fly" ]
+        "0.0":[ 
+          "/function entity/fly"
+        ]
       }
+    },
+    "animation.helicopter.fly_soundfx": {
+        "animation_length": 4.577,
+        "loop": true,
+        "timeline": {
+          "0.0": [
+            "/playsound entity.helicopter.fly @p"
+          ]
+        }
     }
   }
 }

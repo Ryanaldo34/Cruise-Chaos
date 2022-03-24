@@ -3,6 +3,7 @@
   "minecraft:entity": {
     "description": {
       "identifier": "cc:wingback_car",
+      "is_spawnable": true,
       "is_summonable": true,
       "is_experimental": false
     },

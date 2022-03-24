@@ -98,7 +98,7 @@
                                         "subject": "other",
                                         "domain": "hand",
                                         "operator": "equals",
-                                        "value": "cc:rotate_tool"
+                                        "value": "flint"
                                     }
                                 ]
                             },
@@ -116,7 +116,7 @@
                                 "subject": "other",
                                 "domain": "hand",
                                 "operator": "equals",
-                                "value": "cc:repainting_tool"
+                                "value": "stick"
                             },
                             "event": "cc:paint_furniture",
                             "target": "self"

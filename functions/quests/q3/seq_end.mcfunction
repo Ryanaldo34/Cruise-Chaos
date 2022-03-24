@@ -1,4 +1,5 @@
 # transition from quest 3 to quest 4
+stopsound @a voice_lines.commander.commander_q3_lines
 execute @p[tag=!q4_triggered] ~~~ summon cc:helicopter 915 65 641
 execute @p ~~~ setworldspawn 915 65 641
 execute @p ~~~ title @a subtitle §6Find the Helicopter to Fly to the Cruise Ship

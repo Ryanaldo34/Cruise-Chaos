@@ -11,6 +11,7 @@
 			},
 			"animations": {
 				"fly":"controller.animation.fly",
+				"fly_sound": "animation.helicopter.fly_soundfx",
 				"flying": "animation.fly"
 			}
 		},

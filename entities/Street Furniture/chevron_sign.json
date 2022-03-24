@@ -72,7 +72,7 @@
                     "subject": "other",
                     "domain": "hand",
                     "operator": "equals",
-                    "value": "cc:rotate_tool"
+                    "value": "stick"
                 },
                 "event": "cc:remove_furniture",
                 "target": "self"

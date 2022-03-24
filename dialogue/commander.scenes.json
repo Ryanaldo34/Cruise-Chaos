@@ -64,6 +64,9 @@
 			},
 			{
 				"scene_tag": "qone_commander_intro",
+				"on_open_commands": [
+					"/playsound voice_lines.commander.commander_q1_lines @a"
+				],
 				"npc_name": {
 					"rawtext": [
 						{
@@ -77,7 +80,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Finally! I am so glad to see you have finally arrived, just in time too! I hope that the journey wasn't too troubling for you!"
+							"text": "Finally! I am so glad to see you have finally arrived, just in time too! I hope that the journey wasn't too troubling for you? Now, we have a bit of a situation with a cruise ship anchored a few leagues from here. We received an SOS signal from them however we haven't been able to get in contact since. I believe we should be able to reach them if we realign one of the satellite dishes on the factory to the east of here, you wouldn't mind going over and doing that for me, please?"
 						}
 					]
 				},
@@ -86,12 +89,12 @@
 						"name": {
 							"rawtext": [
 								{
-									"translate": "dialogue.button.name"
+									"text": "§6Start Quest"
 								}
 							]
 						},
 						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qone_situation"
+							"/function quests/q1/seq_end"
 						]
 					}
 				],
@@ -100,61 +103,11 @@
 				]
 			},
 			{
-				"scene_tag": "qone_situation",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Now, we have a bit of a situation with a cruise ship anchored a few leagues from here. We received an SOS signal from them however we haven't been able to get in contact since."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qone_satelite"
-						]
-					}
-				]
-			},
-			{
-				"scene_tag": "qone_satelite",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "I believe we should be able to reach them if we realign one of the satellite dishes on the factory to the east of here, you wouldn't mind going over and doing that for me, please?"
-						}
-					]
-				}
-			},
-			{
 				"scene_tag": "qtwo_return",
+				"on_open_commands": [
+					"/playsound voice_lines.commander.commander_q2_lines @a",
+					"/tag @a add q2_returned"
+				],
 				"npc_name": {
 					"rawtext": [
 						{
@@ -168,7 +121,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Ah! you're back so soon! I take it you didn't run into any trouble?"
+							"text": "Ah! you're back so soon! I take it you didn't run into any trouble? Whilst I am establishing a connection with the cruise ship, you should go and see whether you can get the helicopter geared up. We only need three parts for it: a search light, a fuel canister, and the keys that Charlie has seemingly misplaced. You should be able to find them at the Lighthouse, the Shipyard, and Charlie's Garage. Once you have found them, bring them back to me here! Just speak to me again if you need reminding of where you can find these parts."
 						}
 					]
 				},
@@ -177,112 +130,26 @@
 						"name": {
 							"rawtext": [
 								{
-									"translate": "dialogue.button.name"
+									"text": "§6Start Quest"
 								}
 							]
 						},
 						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_lifeboat"
+							"/function quests/q2/seq_end"
 						]
 					}
 				],
 				"on_close_commands": [
-					"/function quests/q2/seq_end"
-				]
-			},
-			{
-				"scene_tag": "qtwo_lifeboat",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Whilst I am establishing a connection with the cruise ship, you should go and see whether you can get the helicopter geared up."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_parts"
-						]
-					}
-				]
-			},
-			{
-				"scene_tag": "qtwo_parts",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "We only need three parts for it: a search light, a fuel canister, and the keys that Charlie has seemingly misplaced."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qtwo_locations"
-						]
-					}
-				]
-			},
-			{
-				"scene_tag": "qtwo_locations",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "You should be able to find them at the Lighthouse, the Shipyard, and Charlie's Garage. Once you have found them, bring them back to me here! Just speak to me again if you need reminding of where you can find these parts."
-						}
-					]
-				},
-				"on_close_commands": [
-					"/function quests/q2/seq_end"
+					"/function quests/q2/seq_end",
+					"/stopsound @a voice_lines.commander.commander_q2_lines"
 				]
 			},
 			{
 				"scene_tag": "qthree_return",
+				"on_open_commands": [
+					"/playsound voice_lines.commander.commander_q3_lines @a",
+					"/tag @a add stop_scene"
+				],
 				"npc_name": {
 					"rawtext": [
 						{
@@ -296,7 +163,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Oh good, you have given me all of the parts that are needed!"
+							"text": "Oh good, you have given me all of the parts that are needed! I managed to establish a connection with the ship and I have given you some supplies that you may need when you reach the cruise ship. You can take the helicopter now and Charlie will join you to rescue passengers if needed. The helicopter will be by the lighthouse. Good luck!"
 						}
 					]
 				},
@@ -305,77 +172,24 @@
 						"name": {
 							"rawtext": [
 								{
-									"translate": "dialogue.button.name"
+									"text": "§6Start Quest"
 								}
 							]
 						},
 						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_sail",
-							"/tag @a add stop_scene"
+							"/function quests/q3/seq_end"
 						]
 					}
 				],
 				"on_close_commands": [
-					"/function quests/q3/seq_end",
-					"/tag @a add stop_scene"
+					"/function quests/q3/seq_end"
 				]
-			},
-			{
-				"scene_tag": "qthree_sail",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "I managed to establish a connection with the ship and I have given you some supplies that you may need when you reach the cruise ship. You can take the helicopter now and Charlie will join you to rescue passengers if needed."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_2,c=1] @a qthree_running_late"
-						]
-					}
-				]
-			},
-			{
-				"scene_tag": "qthree_running_late",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_2.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "The helicopter will be by the lighthouse. Good luck!"
-						}
-					]
-				}
 			},
 			{
 				"scene_tag": "final",
+				"on_open_commands": [
+					"/playsound voice_lines.commander.commander_q5_lines @a"
+				],
 				"npc_name": {
 					"rawtext": [
 						{

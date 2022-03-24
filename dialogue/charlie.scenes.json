@@ -57,7 +57,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Hey you!"
+							"text": "Hey you! You're the one that the commander sent for to help with our cruise ship situation, right? Perfect! You should make your way to them at the MNLI Headquarters so that they can brief you on everything. He usually stays in the downstairs area of the Headquarters..."
 						}
 					]
 				},
@@ -66,118 +66,25 @@
 						"name": {
 							"rawtext": [
 								{
-									"translate": "dialogue.button.name"
+									"text": "§6Begin Quest!"
 								}
 							]
 						},
 						"commands": [
-							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_question"
+							"/function quests/q1/seq_start"
 						]
 					}
 				],
 				"on_close_commands": [
-					"/function quests/q1/seq_start"
-				]
-			},
-			{
-				"scene_tag": "qone_question",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_1.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "You're the one that the commander sent for to help with our cruise ship situation, right?"
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"text": "Yes!"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_make_way"
-						]
-					}
-				],
-				"on_close_commands": [
-					"/function quests/q1/seq_start"
-				]
-			},
-			{
-				"scene_tag": "qone_make_way",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_1.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "Perfect! You should make your way to them at the MNLI Headquarters so that they can brief you on everything."
-						}
-					]
-				},
-				"buttons": [
-					{
-						"name": {
-							"rawtext": [
-								{
-									"translate": "dialogue.button.name"
-								}
-							]
-						},
-						"commands": [
-							"/dialogue open @e[type=gus:npc_1, c=1] @a qone_headquarters"
-						]
-					}
-				],
-				"on_close_commands": [
-					"/function quests/q1/seq_start"
-				]
-			},
-			{
-				"scene_tag": "qone_headquarters",
-				"npc_name": {
-					"rawtext": [
-						{
-							"translate": "entity.gus:npc_1.name",
-							"with": [
-								"\n"
-							]
-						}
-					]
-				},
-				"text": {
-					"rawtext": [
-						{
-							"text": "He usually stays in the downstairs area of the Headquarters..."
-						}
-					]
-				},
-				"on_close_commands": [
-					"/function quests/q1/seq_start"
+					"/function quests/q1/seq_start",
+					"/tag @p add can_play"
 				]
 			},
 			{
 				"scene_tag": "q5_return",
+				"on_open_commands": [
+					"/playsound voice_lines.charlie.charlie_q5_lines @a"
+				],
 				"npc_name": {
 					"rawtext": [
 						{

@@ -10,7 +10,10 @@
         "fly": {
           "on_entry": [ "@s cc:is_flying" ],
           "on_exit": [ "@s cc:on_ground" ],
-          "animations": [ "flying" ],
+          "animations": [ 
+            "flying",
+            "fly_sound" 
+          ],
           "transitions": [ { "default": "!query.has_rider" } ]
         }
       }

@@ -10,8 +10,8 @@ execute @a[scores={quest=4,seq=1}]  ~~~ function quests/q4/mission
 execute @a[scores={quest=4,seq=2}] ~~~ execute @p[x=251,y=98,z=-88,r=6] ~~~ function quests/q4/scene
 execute @a[scores={quest=5,seq=1..2}]  ~~~ function quests/q5/mission
 execute @a[scores={quest=5,seq=3},tag=!game_complete] ~~~ function quests/q5/seq_end
-execute @a[scores={quest=1}] ~~~ spawnpoint @a 1257 113 638
-execute @a[scores={quest=2}] ~~~ spawnpoint @a 1257 113 638
-execute @a[scores={quest=3}] ~~~ spawnpoint @a 1257 113 638
-execute @a[scores={quest=4}] ~~~ spawnpoint @a 1257 113 638
-execute @a[scores={quest=5}] ~~~ spawnpoint @a 265 255 -76
+execute @a[scores={quest=1}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
+execute @a[scores={quest=2}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
+execute @a[scores={quest=3}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
+execute @a[scores={quest=4}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
+execute @a[scores={quest=5}] ~~~ spawnpoint @a[tag=can_play] 265 255 -76

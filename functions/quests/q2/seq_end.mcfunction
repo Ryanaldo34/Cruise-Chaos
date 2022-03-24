@@ -1,9 +1,10 @@
-tp @e[type=gus:npc_2,scores={npc=!3}]890.5 212.0 605.5
-tp @e[type=gus:npc_2,scores={npc=3}] 890.5 67.5 606.0
 setworldspawn 966 255 514
-title @a subtitle §6Find the Ship Parts
+title @a subtitle §6Find the Helicopter Parts
 execute @a[tag=!q3_triggered] ~~~ function quests/on/start
+tag @a add q3_triggered
 scoreboard players set @a quest 3
 scoreboard players set @a seq 1
-tag @s add q3_triggered
+replaceitem block 930 65 519 slot.container 23 cc:fuel_canister
+replaceitem block 924 95 651 slot.container 14 cc:searchlight
+replaceitem block 1078 87 568 slot.container 7 cc:key
 dialogue change @e[type=gus:npc_2] q3_hint @a

@@ -1,7 +1,5 @@
-scoreboard objectives add npc dummy
 scoreboard objectives add quest dummy
 scoreboard objectives add seq dummy
-scoreboard objectives add seq_tl dummy
 scoreboard objectives add fires dummy
 scoreboard players set @a quest 0
 scoreboard players set @a seq 0
@@ -10,11 +8,9 @@ say resetting
 gamemode a @a
 kill @e[type=gus:npc_2]
 summon gus:npc_2 890 67 606 minecraft:entity_spawned §4Commander
-replaceitem block 930 65 519 slot.container 23 cc:fuel_canister 1 0
-replaceitem block 924 95 651 slot.container 14 cc:searchlight 1 0
-replaceitem block 1078 87 568 slot.container 7 cc:key 1 0
 event entity @e[type=gus:npc_2] minecraft:entity_spawned
 tag @e remove compass
+tag @e remove q1_ended
 tag @e remove already_triggered_q2
 tag @e remove stop_scene
 tag @e remove scene4_opened
@@ -45,13 +41,23 @@ tag @e remove fires_out
 tag @e remove game_complete
 tag @e remove q5_end_scene
 tag @e remove q5_leave
+tag @e remove q2_returned
+tag @e remove in_harbour
+tag @e remove in_town
+tag @e remove can_play
+spawnpoint @a 864 64 554
 clear @a
 tp @a 864 64 554
 tp @e[type=gus:npc_1] 865 65 543
-kill @e[type=cc:speedboat]
 kill @e[type=cc:helicopter]
 kill @e[type=cc:fire]
 kill @e[family=dummy]
+kill @e[type=cc:wingback_car]
+summon cc:wingback_car 1038 78 591
+# reset satellite
+setblock 950 59 526 air
+fill 958 105 522 949 94 513 air
+clone 1003 43 527 992 58 540 951 91 517 masked normal
 # reset the ship
 fill 265 86 -67 255 52 -111 air -1 replace fire 0
 fill 255 52 -111 245 86 -67 air -1 replace fire 0

@@ -24,7 +24,7 @@
         "default": {
           "transitions": [
             {
-              "rotate": "query.is_alive"
+              "rotate": "query.is_on_ground"
             }
           ]
         },
