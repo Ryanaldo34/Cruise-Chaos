@@ -83,7 +83,7 @@
 			{
 				"scene_tag": "q5_return",
 				"on_open_commands": [
-					"/playsound voice_lines.charlie.charlie_q5_lines @a"
+					"/playsound voice_lines.charlie.charlie_q5_lines @a ~~~ 0.7 1.0"
 				],
 				"npc_name": {
 					"rawtext": [

@@ -60,6 +60,15 @@
         "minecraft:experience_reward": {
           "on_death": "Math.Min(query.player_level * 7, 100)"
         },
+        "minecraft:damage_sensor": {
+          "triggers": [
+            {
+              "cause": "fire",
+              "deals_damage": true,
+              "damage_multiplier": 3
+            }
+          ]
+        },
         "minecraft:type_family": {
           "family": [ "player" ]
         },

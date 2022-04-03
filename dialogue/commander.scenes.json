@@ -65,7 +65,7 @@
 			{
 				"scene_tag": "qone_commander_intro",
 				"on_open_commands": [
-					"/playsound voice_lines.commander.commander_q1_lines @a"
+					"/playsound voice_lines.commander.commander_q1_lines @a ~~~ 0.7 1.0"
 				],
 				"npc_name": {
 					"rawtext": [
@@ -105,7 +105,7 @@
 			{
 				"scene_tag": "qtwo_return",
 				"on_open_commands": [
-					"/playsound voice_lines.commander.commander_q2_lines @a",
+					"/playsound voice_lines.commander.commander_q2_lines @a ~~~ 0.7 1.0",
 					"/tag @a add q2_returned"
 				],
 				"npc_name": {
@@ -147,7 +147,7 @@
 			{
 				"scene_tag": "qthree_return",
 				"on_open_commands": [
-					"/playsound voice_lines.commander.commander_q3_lines @a",
+					"/playsound voice_lines.commander.commander_q3_lines @a ~~~ 0.7 1.0",
 					"/tag @a add stop_scene"
 				],
 				"npc_name": {
@@ -188,7 +188,7 @@
 			{
 				"scene_tag": "final",
 				"on_open_commands": [
-					"/playsound voice_lines.commander.commander_q5_lines @a"
+					"/playsound voice_lines.commander.commander_q5_lines @a ~~~ 0.7 1.0"
 				],
 				"npc_name": {
 					"rawtext": [
@@ -203,7 +203,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "Just got word from the Captain of the good work you’ve done. He has even put your name forward for an award! You’ve made us all proud! You can now hang around the town and we will let you know if we need you again!"
+							"text": "Just got word from the Captain of the good work you’ve done. He has even put your name forward for an award! You’ve made us proud! You can now hang around the town and we will let you know if we need you again!"
 						}
 					]
 				},

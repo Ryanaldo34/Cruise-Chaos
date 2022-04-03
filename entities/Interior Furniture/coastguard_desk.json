@@ -32,8 +32,8 @@
       },
       "minecraft:physics": {},
       "minecraft:collision_box": {
-        "height": 2,
-        "width": 3
+        "height": 1.8,
+        "width": 2
       },
       "minecraft:breathable": {
         "total_supply": 2,
@@ -84,7 +84,6 @@
         "is_pushable": false,
         "is_pushable_by_piston": true
       },
-      "minecraft:is_stackable": {},
       "minecraft:push_through": {
         "value": 1
       }

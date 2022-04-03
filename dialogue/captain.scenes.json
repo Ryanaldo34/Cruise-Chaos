@@ -4,7 +4,7 @@
 		"scenes": [
 			{
 				"on_open_commands": [
-					"/playsound voice_lines.captain.captain_q4_lines @a",
+					"/playsound voice_lines.captain.captain_q4_lines @a ~~~ 0.7 1.0",
 					"/tag @a add scene4_opened"
 				],
 				"scene_tag": "q4_intro",
@@ -21,7 +21,7 @@
 				"text": {
 					"rawtext": [
 						{
-							"text": "I am glad to see you! We have a little bit of a situation here if you can't tell. We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to use your extinguisher to put them out! Once you've done that, you need to head to the engine room and restart the power. Good luck!"
+							"text": "I am glad to see you! We have a little bit of a situation here if you can't tell. We have 5 fires raging around the ship that have stopped the ship's stabilizers from working. We need you to use your extinguisher to put them out! Once you've done that, you need to head to the engine room and restart the power."
 						}
 					]
 				},
@@ -45,7 +45,7 @@
 			},
 			{
 				"on_open_commands": [
-					"/playsound voice_lines.captain.captain_q5_lines @a"
+					"/playsound voice_lines.captain.captain_q5_lines @a ~~~ 0.7 1.0"
 				],
 				"scene_tag": "q5_end",
 				"npc_name": {

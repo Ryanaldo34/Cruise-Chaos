@@ -23,6 +23,15 @@
 			}
 		},
 		"components": {
+			"minecraft:behavior.float": {
+				"priority": 1
+			},
+			"minecraft:behavior.rise_to_liquid_level": {
+				"priority": 0,
+				"liquid_y_offset": 0.25,
+				"rise_delta": 0.05,
+				"sink_delta": 0
+			},
 			"minecraft:type_family": {
 				"family": [
 					"vehicle"
@@ -34,7 +43,9 @@
 			"minecraft:movement": {
 				"value": 0
 			},
-			"minecraft:navigation.generic": {},
+			"minecraft:navigation.generic": {
+				"can_sink": false
+			},
 			"minecraft:movement.basic": {
 				"max_turn": 30
 			},

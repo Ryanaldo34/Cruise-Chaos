@@ -22,10 +22,17 @@ execute @p[tag=!q5_triggered] ~~~ scoreboard players set @e[type=cc:suite] fires
 
 # run an the appropriate family spawn event when spawning the first fire in each room
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 192 52 -88 cc:engine_room
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 147 52 -87 cc:engine_room
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 72 75 -88 cc:shopping_mall
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 93 75 -78 cc:shopping_mall
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 100 75 -98 cc:shopping_mall
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 174 64 -84 cc:kitchen
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 174 64 -103 cc:kitchen
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 182 65 -94 cc:kitchen
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 255 84 -93 cc:jazz_club
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 244 86 -71 cc:jazz_club
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 241 86 -85 cc:jazz_club
+execute @p[tag=!q5_triggered] ~~~ summon cc:fire 260 84 -81 cc:jazz_club
 execute @p[tag=!q5_triggered] ~~~ summon cc:fire 90 68 -87 cc:suite
 # The Fire display Scoreboard
 execute @p[tag=!q5_triggered] ~~~ scoreboard objectives setdisplay sidebar fire_display

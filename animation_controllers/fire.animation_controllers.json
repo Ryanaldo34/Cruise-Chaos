@@ -6,7 +6,8 @@
 			"states": {
 				"default": {
 					"on_entry": [
-						"/function entity/fire_tracker"
+						"/execute @s[tag=!placed] ~~~ function entity/fire_tracker",
+						"/tag @s add placed"
 					],
 					"animations": [
 						"extinguish"

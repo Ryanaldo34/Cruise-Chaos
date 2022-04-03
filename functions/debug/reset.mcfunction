@@ -52,8 +52,6 @@ tp @e[type=gus:npc_1] 865 65 543
 kill @e[type=cc:helicopter]
 kill @e[type=cc:fire]
 kill @e[family=dummy]
-kill @e[type=cc:wingback_car]
-summon cc:wingback_car 1038 78 591
 # reset satellite
 setblock 950 59 526 air
 fill 958 105 522 949 94 513 air
@@ -77,3 +75,18 @@ fill 115 86 -67 100 52 -111 air -1 replace fire 0
 fill 100 52 -111 85 86 -67 air -1 replace fire 0
 fill 85 86 -67 70 52 -111 air -1 replace fire 0
 fill 70 52 -67 55 86 -111 air -1 replace fire 0
+# rest the engine room door
+setblock 202 52 -87 iron_block
+setblock 202 53 -87 iron_block
+setblock 202 54 -87 iron_block
+setblock 202 55 -87 iron_block
+setblock 202 52 -88 iron_block
+setblock 202 53 -88 stained_glass 8
+setblock 202 54 -88 stained_glass 8
+setblock 202 55 -88 iron_block
+setblock 202 52 -89 iron_block
+setblock 202 53 -89 iron_block
+setblock 202 54 -89 iron_block
+setblock 202 55 -89 iron_block
+setblock 203 53 -89 iron_bars
+setblock 203 54 -89 iron_bars

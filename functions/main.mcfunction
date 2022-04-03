@@ -10,3 +10,5 @@ execute @p[x=1021,y=76,z=581,rm=101] ~~~ stopsound @p ambient.town_ambience
 execute @p[x=1021,y=76,z=581,rm=101] ~~~ tag @a remove in_town
 execute @p[tag=can_play] ~~~ tp @a[tag=!can_play] 0 -256 0
 execute @p[tag=can_play] ~~~ spawnpoint @a[tag=!can_play] 0 -256 0
+execute @p[tag=can_play] ~~~ scoreboard players set @a[tag=!can_play] quest -1
+execute @p[tag=can_play] ~~~ scoreboard players set @a[tag=!can_play] seq -1

@@ -1,6 +1,6 @@
 # used to track how many fires are in each room, runs when it is spawned
 execute @s ~~~ detect ~~~ air -1 tag @s add can_ignite
-execute @s[tag=can_ignite] ~~~ setblock ~~~ fire 0
+execute @e[type=cc:engine_room,scores={fires=200..}] ~~~ tag @s remove can_ignite
 execute @s[family=engine_room,tag=can_ignite] ~~~ scoreboard players add @e[type=cc:engine_room] fires 1
 execute @s[family=engine_room,tag=can_ignite] ~~~ scoreboard players add "Engine Room" fire_display 1
 
@@ -15,4 +15,6 @@ execute @s[family=kitchen,tag=can_ignite] ~~~ scoreboard players add "Posh Resta
 
 execute @s[family=suite,tag=can_ignite] ~~~ scoreboard players add @e[type=cc:suite] fires 1
 execute @s[family=suite,tag=can_ignite] ~~~ scoreboard players add "Random Suite" fire_display 1
+
+execute @s[tag=can_ignite] ~~~ setblock ~~~ fire 0
 execute @s[tag=!can_ignite] ~~~ function entity/remove

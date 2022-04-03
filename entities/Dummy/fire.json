@@ -139,6 +139,12 @@
                 }
             },
             "cc:fire_multiply": {
+                "filters": {
+                    "test": "has_tag",
+                    "subject": "self",
+                    "operator": "not",
+                    "value": "maxed"
+                },
                 "remove": {
                     "component_groups": [
                         "fire:spawn_timer"

@@ -1,9 +1,16 @@
 # manages quest 5 on the ship
-# put a limit on the engine room fires to prevent lag
-execute @e[type=cc:engine_room,scores={fires=200..}] ~~~ execute @r[type=cc:fire,family=engine_room] ~~~ function entity/fire_extinguish
-execute @e[type=cc:shopping_mall,scores={fires=1..250}] ~~~ tag @a remove q5_3
-execute @e[type=cc:kitchen,scores={fires=1..250}] ~~~ tag @a remove q5_4
-execute @e[type=cc:suite,scores={fires=1..250}] ~~~ tag @a remove q5_5
+
+# put limit on fires
+execute @e[type=cc:engine_room,scores={fires=100..}] ~~~ tag @e[type=cc:fire,family=engine_room] add maxed
+execute @e[type=cc:jazz_club,scores={fires=100..}] ~~~ tag @e[type=cc:fire,family=jazz_club] add maxed
+execute @e[type=cc:kitchen,scores={fires=100..}] ~~~ tag @e[type=cc:fire,family=kitchen] add maxed
+execute @e[type=cc:shopping_mall,scores={fires=100..}] ~~~ tag @e[type=cc:fire,family=shopping_mall] add maxed
+# had some weird bug that is preventing
+execute @e[type=cc:shopping_mall,scores={fires=1..100}] ~~~ tag @a remove q5_3
+execute @e[type=cc:kitchen,scores={fires=1..100}] ~~~ tag @a remove q5_4
+execute @e[type=cc:suite,scores={fires=1..100}] ~~~ tag @a remove q5_5
+execute @e[type=cc:engine_room,scores={fires=-250..-1}] ~~~ scoreboard players set "Engine Room" fire_display 0
+execute @e[type=cc:engine_room,scores={fires=-250..-1}] ~~~ scoreboard players set @s fires 0
 
 # detect when fires have been put out
 execute @p[tag=q5_triggered,tag=!q5_5] ~~~ execute @e[type=cc:suite,scores={fires=0}] ~~~ function quests/on/update
