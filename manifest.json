@@ -1,8 +1,8 @@
 {
 	"format_version": 2,
 	"header": {
-		"name": "Cruise Map",
-		"description": "testing for cruise map",
+		"name": "pack.name",
+		"description": "pack.description",
 		"min_engine_version": [
 			1,
 			17,
@@ -17,7 +17,7 @@
 	},
 	"modules": [
 		{
-			"description": "testing for cruise map",
+			"description": "pack.description",
 			"type": "data",
 			"uuid": "0b34489d-fa1e-4063-b827-d8d3440854e6",
 			"version": [
@@ -36,12 +36,5 @@
 				0
 			]
 		}
-	],
-	"metadata": {
-		"generated_with": {
-			"bridge": [
-				"2.2.2"
-			]
-		}
-	}
+	]
 }

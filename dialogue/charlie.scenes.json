@@ -103,6 +103,8 @@
 					]
 				},
 				"on_close_commands": [
+					"/function quests/on/update",
+					"/title @a subtitle §gGo back to the helicopter landing pad!",
 					"/function quests/q5/exit"
 				]
 			}

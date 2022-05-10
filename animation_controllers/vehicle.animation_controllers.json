@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.vehicles": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        { "has_rider": "query.has_rider" }
+                    ]
+                },
+                "has_rider": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        { "default": "!query.has_rider" }
+                    ]
+                }
+            }
+        }
+    }
+}

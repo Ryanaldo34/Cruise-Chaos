@@ -1,0 +1,75 @@
+{
+	"format_version": "1.18.0",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "cc:doubledecker_bus",
+			"is_summonable": true,
+			"is_spawnable": true,
+			"is_experimental": false
+		},
+		"components": {
+			"minecraft:type_family": {
+				"family": [
+					"vehicle"
+				]
+			},
+			"minecraft:collision_box": {
+				"height": 5,
+				"width": 3.5
+			},
+			"minecraft:breathable": {
+				"total_supply": 15,
+				"suffocate_time": 0,
+				"inhale_time": 0,
+				"breathes_air": true,
+				"breathes_water": false,
+				"breathes_lava": false,
+				"breathes_solids": false,
+				"generates_bubbles": true
+			},
+			"minecraft:scale": {
+				"value": 1.0
+			},
+			"minecraft:health": {
+				"value": 10,
+				"max": 10
+			},
+			"minecraft:damage_sensor": {
+				"triggers": [
+					{
+						"cause": "all",
+						"deals_damage": false
+					}
+				]
+			},
+			"minecraft:movement": {
+				"value": 0.2,
+				"max": 0.2
+			},
+			"minecraft:navigation.generic": {},
+			"minecraft:movement.basic": {
+				"max_turn": 30
+			},
+			"minecraft:rideable": {
+				"seat_count": 1,
+				"family_types": [
+					"player"
+				],
+				"interact_text": "text.interact.ride",
+				"pull_in_entities": false,
+				"crouching_skip_interact": false,
+				"seats": [
+					{
+						"position": [-0.7, 1.1, 2.7],
+						"min_rider_count": 0
+					}
+				]
+			},
+			"minecraft:input_ground_controlled": {},
+			"minecraft:physics": {
+				"has_collision": true,
+				"has_gravity": true
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+    "format_version": "1.10.0",
+    "animations": {
+        "animation.speedboat.idle": {
+            "loop": true,
+            "animation_length": 5.538,
+            "timeline": {
+                "0.0": [
+                    "/playsound entity.speedboat.idle @p"
+                ]
+            }
+        }
+    }
+}

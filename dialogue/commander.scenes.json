@@ -208,7 +208,8 @@
 					]
 				},
 				"on_close_commands": [
-					"/tag @a add game_complete"
+					"/tag @a add game_complete",
+					"/function quests/end"
 				]
 			}
 		]

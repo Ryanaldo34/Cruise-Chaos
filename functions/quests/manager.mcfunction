@@ -14,4 +14,4 @@ execute @a[scores={quest=1}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
 execute @a[scores={quest=2}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
 execute @a[scores={quest=3}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
 execute @a[scores={quest=4}] ~~~ spawnpoint @a[tag=can_play] 1257 113 638
-execute @a[scores={quest=5}] ~~~ spawnpoint @a[tag=can_play] 265 255 -76
+execute @a[scores={quest=5}] ~~~ spawnpoint @a[tag=can_play] 265 98 -76

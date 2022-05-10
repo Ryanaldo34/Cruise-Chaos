@@ -11,7 +11,7 @@
       }
     },
     "animation.helicopter.fly_soundfx": {
-        "animation_length": 4.577,
+        "animation_length": 4.576,
         "loop": true,
         "timeline": {
           "0.0": [
