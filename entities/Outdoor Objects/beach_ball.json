@@ -59,23 +59,23 @@
                 "total_supply": 2,
                 "suffocate_time": 0,
                 "inhale_time": 10
-                },
-                "minecraft:damage_sensor": {
+            },
+            "minecraft:damage_sensor": {
                     "triggers": [
-                        {
-                            "cause": "entity_attack",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "fire",
-                            "deals_damage": false
-                        },
-                        {
-                            "cause": "projectile",
-                            "deals_damage": false
-                        }
-                    ]
-                },
+                    {
+                        "cause": "entity_attack",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "fire",
+                        "deals_damage": false
+                    },
+                    {
+                        "cause": "projectile",
+                        "deals_damage": false
+                    }
+                ]
+            },
             "minecraft:interact": {
                 "interactions": [
                     {

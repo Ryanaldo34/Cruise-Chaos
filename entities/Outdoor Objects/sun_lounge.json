@@ -19,9 +19,29 @@
       },
       "component_groups": {
         "being_removed": {
-          "minecraft:variant": {
-            "value": 1
-          }
+            "minecraft:variant": {
+                "value": 1
+            }
+        },
+        "blue": {
+            "minecraft:mark_variant": {
+                "value": 0
+            }
+        },
+        "green": {
+            "minecraft:mark_variant": {
+                "value": 1
+            }
+        },
+        "red": {
+            "minecraft:mark_variant": {
+                "value": 2
+            }
+        },
+        "yellow": {
+            "minecraft:mark_variant": {
+                "value": 3
+            }
         }
       },
       "components": {
@@ -58,26 +78,45 @@
         },
         "minecraft:interact": {
           "interactions": [
-            {
-              "swing": true,
-              "add_items": {
-                "table": "loot_tables/furniture.json"
-  
+              {
+                  "swing": true,
+                  "add_items": {
+                      "table": "loot_tables/furniture.json"
+                  },
+                  "use_item": false,
+                  "interact_text": "action.interact.remove_furniture",
+                  "on_interact": {
+                      "filters": {
+                          "all_of": [
+                              {
+                                  "test": "has_equipment",
+                                  "subject": "other",
+                                  "domain": "hand",
+                                  "operator": "equals",
+                                  "value": "flint"
+                              }
+                          ]
+                      },
+                      "event": "cc:remove_furniture",
+                      "target": "self"
+                  }
               },
-              "use_item": false,
-              "interact_text": "action.interact.remove_furniture",
-              "on_interact": {
-                "filters": {
-                    "test": "has_equipment",
-                    "subject": "other",
-                    "domain": "hand",
-                    "operator": "equals",
-                    "value": "stick"
-                },
-                "event": "cc:remove_furniture",
-                "target": "self"
+              {
+                  "swing": true,
+                  "use_item": false,
+                  "interact_text": "action.interact.paint",
+                  "on_interact": {
+                      "filters": {
+                          "test": "has_equipment",
+                          "subject": "other",
+                          "domain": "hand",
+                          "operator": "equals",
+                          "value": "stick"
+                      },
+                      "event": "cc:paint_furniture",
+                      "target": "self"
+                  }
               }
-            }
           ]
         },
         "minecraft:pushable": {
@@ -90,13 +129,92 @@
         }
       },
       "events": {
-        "cc:remove_furniture": {
+        "minecraft:entity_spawned": {
           "add": {
-            "component_groups": [
-              "being_removed"
-            ]
+              "component_groups": [
+                  "blue"
+              ]
           }
-        }
+      },
+      "cc:remove_furniture": {
+          "add": {
+              "component_groups": [
+                  "being_removed"
+              ]
+          }
+      },
+      "cc:paint_furniture": {
+          "sequence": [
+              {
+                  "filters": {
+                      "test": "is_mark_variant",
+                      "operator": "equals",
+                      "value": 3
+                  },
+                  "remove": {
+                      "component_groups": [
+                          "yellow"
+                      ]
+                  },
+                  "add": {
+                      "component_groups": [
+                          "blue"
+                      ]
+                  }
+              },
+              {
+                  "filters": {
+                      "test": "is_mark_variant",
+                      "operator": "equals",
+                      "value": 2
+                  },
+                  "remove": {
+                      "component_groups": [
+                          "red"
+                      ]
+                  },
+                  "add": {
+                      "component_groups": [
+                          "yellow"
+                      ]
+                  }
+              },
+              {
+                  "filters": {
+                      "test": "is_mark_variant",
+                      "operator": "equals",
+                      "value": 1
+                  },
+                  "remove": {
+                      "component_groups": [
+                          "green"
+                      ]
+                  },
+                  "add": {
+                      "component_groups": [
+                          "red"
+                      ]
+                  }
+              },
+              {
+                  "filters": {
+                      "test": "is_mark_variant",
+                      "operator": "equals",
+                      "value": 0
+                  },
+                  "remove": {
+                      "component_groups": [
+                          "blue"
+                      ]
+                  },
+                  "add": {
+                      "component_groups": [
+                          "green"
+                      ]
+                  }
+              }
+          ]
       }
     }
   }
+}

@@ -127,10 +127,6 @@
             "minecraft:pushable": {
                 "is_pushable": false,
                 "is_pushable_by_piston": true
-            },
-            "minecraft:is_stackable": {},
-            "minecraft:push_through": {
-                "value": 1
             }
         },
         "events": {
