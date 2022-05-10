@@ -1,3 +1,4 @@
+time set day
 scoreboard objectives add quest dummy
 scoreboard objectives add seq dummy
 scoreboard objectives add fires dummy
@@ -44,6 +45,8 @@ tag @e remove q5_leave
 tag @e remove q2_returned
 tag @e remove in_harbour
 tag @e remove in_town
+tag @e remove on_deck
+stopsound @a ambient.sea_ambience
 tag @e remove can_play
 spawnpoint @a 864 64 554
 clear @a
